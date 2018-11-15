@@ -1,2 +1,3 @@
 
-Home Hello World!
+Willkommen bei eduGate! Dein Tor zur Weiterbildung.
+
