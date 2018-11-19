@@ -69,6 +69,6 @@ class News extends CI_Controller
 
     public function delete($id)
     {
-        $this->news_model->delete_news('news', array('id' => $id));
+        $this->news_model->delete_news($id);
     }
 }
