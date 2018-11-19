@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['404_override'] = 'errors/page_missing';
 $route['translate_uri_dashes'] = FALSE;
 $route['news/create'] = 'news/create';
-$route['news/delete/(:any)'] = 'news/delete/$1';
+$route['news/delete/(:any)'] = 'news/delete/';
 $route['news/(:any)'] = 'news/view/$1';
 $route['news'] = 'news';
 $route['(:any)'] = 'pages/view/$1';
