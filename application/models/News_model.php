@@ -25,9 +25,9 @@ class News_model extends CI_Model {
         $slug = url_title($this->input->post('title'), 'dash', TRUE);
 
         $data = array(
-            'title' => $this->input->post('title'),
+            'title' => $this->input->post('title', TRUE),
             'slug' => $slug,
-            'text' => $this->input->post('text')
+            'text' => $this->input->post('text', TRUE)
         );
 
         return $this->db->insert('news', $data);
