@@ -11,7 +11,6 @@
             <a class="navbar-brand" href="#">WebSiteName</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="/>Home</a></li>
             <li><a href="<?php echo base_url();?>">Home</a> </li>
             <li><a href="<?php echo base_url()?>about">About</a> </li>
         </ul>
