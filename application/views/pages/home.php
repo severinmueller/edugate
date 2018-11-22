@@ -1,1 +1,0 @@
-<img src=<?php echo base_url("assets/images/edugate-schrift.png");?> alt="">
