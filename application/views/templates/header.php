@@ -6,7 +6,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light py-1">
-    <a class="navbar-brand py-1" href="/webeng"><img src=<?php echo base_url("assets/images/edugate-schrift.png");?> alt="edugate" height="80"></a>
+    <a class="navbar-brand py-1" href="/"><img src=<?php echo base_url("assets/images/edugate-schrift.png");?> alt="edugate" height="80"></a>
 
     <div class="collapse navbar-collapse" id="navbarSuspportedContent">
         <ul class="navbar-nav mr-auto">
