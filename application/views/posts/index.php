@@ -1,8 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: 2
- * Date: 22.11.2018
- * Time: 18:56
- */
-echo 'hi';
+<?php foreach($posts as $post) : ?>
+<h3><?php echo $post['title']; ?></h3>
+<small>Posted on: <?php echo $post['created_at']; ?></small>
+<?php echo $post['body']; ?>
+<?php endforeach; ?>
