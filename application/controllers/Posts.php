@@ -25,7 +25,7 @@ class Posts extends CI_Controller
     {
         $data['post'] = $this->post_model->get_posts($slug);
 
-        if (empty($data['posts'])) {
+        if (empty($data['post'])) {
             show_404();
         }
 
