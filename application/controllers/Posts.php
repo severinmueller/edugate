@@ -52,8 +52,5 @@ class Posts extends CI_Controller
             redirect('posts');
         }
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('posts/create', $data);
-        $this->load->view('templates/footer', $data);
     }
 }
