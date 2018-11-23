@@ -40,6 +40,18 @@ class Posts extends CI_Controller
 
         $data['title'] = 'Create post';
 
+        $this->form_validation->set_rules('title', 'Title', 'required');
+        $this->form_validation->set_rules('body', 'Body', 'required');
+
+        if($this->form_validation->run() === FALSE){
+            $this->load->view('templates/header', $data);
+            $this->load->view('posts/create', $data);
+            $this->load->view('templates/footer', $data );
+        }else {
+            $this->post_model->create_post();
+            redirect('posts');
+        }
+
         $this->load->view('templates/header', $data);
         $this->load->view('posts/create', $data);
         $this->load->view('templates/footer', $data);
