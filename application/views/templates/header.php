@@ -21,6 +21,9 @@
             <li class="nav-item <?php if($this->uri->uri_string() == 'about') { echo 'active'; }?> py-1">
                 <a class="nav-link py-1" href="<?php echo base_url();?>about">About </a>
             </li>
+            <li class="nav-item <?php if($this->uri->uri_string() == 'posts') { echo 'active'; }?> py-1">
+                <a class="nav-link py-1" href="<?php echo base_url();?>posts">Posts </a>
+            </li>
         </ul>
     </div>
 </nav>
