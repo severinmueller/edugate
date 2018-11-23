@@ -23,6 +23,7 @@ class Posts extends CI_Controller
 
     public function view($slug = NULL)
     {
+        $data['title'] = $slug;
         $data['post'] = $this->post_model->get_posts($slug);
 
         if (empty($data['post'])) {
