@@ -9,6 +9,7 @@ class Posts extends CI_Controller
         $this->load->model('post_model');
         $this->load->helper('url_helper');
         $this->load->helper('form');
+        $this->load->library('form_validation');
     }
 
 
