@@ -9,7 +9,15 @@
 </div>
 <div class="form-group">
     <label>Body</label>
-    <textarea class="form-control" name="body" placeholder="Add body..."><?php echo $post['body']?></textarea>
+    <textarea id="editor" class="form-control" name="body" placeholder="Add body..."><?php echo $post['body']?></textarea>
 </div>
 <button type="submit" class="btn btn-default">Submit</button>
 </form>
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
