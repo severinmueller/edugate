@@ -60,9 +60,9 @@ class Posts extends CI_Controller
         redirect('posts');
     }
 
-    public function edit($id){
+    public function edit($slug){
 
-        $data['post'] = $this->post_model->get_posts($id);
+        $data['post'] = $this->post_model->get_posts($slug);
         $data['title'] = 'Edit post';
 
         if (empty($data['post'])) {
