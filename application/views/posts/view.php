@@ -7,7 +7,7 @@
 
 <hr>
 <?php echo form_open('posts/delete/'.$post['id']); ?>
-<a class="btn btn-default" href="edit/<?php echo $post['id'];?>">Edit</a>
+<a class="btn btn-default" href="edit/<?php echo $post['slug'];?>">Edit</a>
 <input type="submit" value="Delete" class="btn btn-danger">
 </form>
 
