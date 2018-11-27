@@ -57,8 +57,6 @@ class Post_model extends CI_Model
 
         $this->db->where('id',$id);
         return $this->db->update('posts',$data);
-
-
     }
 
     public function get_categories(){
