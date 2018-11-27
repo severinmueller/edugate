@@ -10,6 +10,8 @@ class Posts extends CI_Controller
         $this->load->helper('url_helper');
         $this->load->helper('form');
         $this->load->library('form_validation');
+        $this->load->helper('htmlpurifier');
+
     }
 
 
@@ -25,7 +27,8 @@ class Posts extends CI_Controller
 
     public function view($id = NULL)
     {
-        $data['post'] = $this->post_model->get_posts($id);
+        $unclean_data['post'] = $this->post_model->get_posts($id);
+        $data = html_purify($unclean_data);
         $data['title'] = $data['post']['title'];
 
         if (empty($data['post'])) {
