@@ -27,8 +27,7 @@ class Posts extends CI_Controller
 
     public function view($id = NULL)
     {
-        $unclean_data['post'] = $this->post_model->get_posts($id);
-        $data = html_purify($unclean_data);
+        $data['post'] = $this->post_model->get_posts($id);
         $data['title'] = $data['post']['title'];
 
         if (empty($data['post'])) {
