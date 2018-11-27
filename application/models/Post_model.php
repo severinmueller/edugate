@@ -33,7 +33,7 @@ class Post_model extends CI_Model
             'title' => $this->input->post('title'),
             'slug' => $slug,
             'body' => $this->input->post('body'),
-            'category_id' => $this->input->post('category_id')
+            'category' => $this->input->post('category')
         );
 
             return $this->db->insert('posts',$data);
@@ -52,7 +52,7 @@ class Post_model extends CI_Model
             'title' => $this->input->post('title'),
             'slug' => $slug,
             'body' => $this->input->post('body'),
-            'category_id' => $this->input->post('category_id')
+            'category' => $this->input->post('category')
         );
 
         $this->db->where('id',$id);
