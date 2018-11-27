@@ -11,5 +11,12 @@
         <label>Body</label>
         <textarea class="form-control" name="body" placeholder="Add body..."></textarea>
     </div>
+<div class="form-group">
+    <label>Category</label>
+    <select name="category_id" class="form-control"></select>
+    <?php foreach($categories as $category): ?>
+    <option value=""><?php echo $category['name'];?> </option>
+    <?php endforeach; ?>
+</div>
 <button type="submit" class="btn btn-default">Submit</button>
 </form>
