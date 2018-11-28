@@ -15,7 +15,7 @@
         public function index(){
             $data['title'] = 'Categories';
 
-            $date['categories'] = $this->category_model->get_categories();
+            $data['categories'] = $this->category_model->get_categories();
 
             $this->load->view('templates/header', $data);
             $this->load->view('categories/index', $data);
