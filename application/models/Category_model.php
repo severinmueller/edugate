@@ -29,4 +29,10 @@ public function create_category(){
     }
 
 
+    public function get_category($id){
+        $query = $this->db->get_where('categories',array('id' => $id));
+        return $query->row();
+    }
+
+
 }
