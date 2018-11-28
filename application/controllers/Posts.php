@@ -53,7 +53,6 @@ class Posts extends CI_Controller
             $this->load->view('posts/create', $data);
             $this->load->view('templates/footer', $data );
 
-        } else {
             // Upload Image
             $config['upload_path'] = './assets/images/posts';
             $config['allowed_types'] = 'gif|jpg|png';
