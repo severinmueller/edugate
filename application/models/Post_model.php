@@ -16,7 +16,8 @@ class Post_model extends CI_Model
     public function get_posts($slug = FALSE)
     {
         if($slug === FALSE){
-            $this->db->order_by('id', 'DESC');
+            $this->db->order_by('posts.id', 'DESC');
+            $this->db->join('categories', 'categories.id = posts.category');
             $query = $this->db->get('posts');
             return $query->result_array();
         }
