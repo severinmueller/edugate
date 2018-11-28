@@ -12,6 +12,10 @@
             $this->load->helper('text');
         }
 
+        public function index(){
+
+        }
+
         public function create(){
             $data['title'] = 'Create category';
 
