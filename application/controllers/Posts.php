@@ -69,6 +69,9 @@ class Posts extends CI_Controller
         $data['post'] = $this->post_model->get_posts($slug);
         $data['title'] = 'Edit post';
 
+        $data['categories'] = $this->post_model->get_categories();
+
+
         if (empty($data['post'])) {
             show_404();
         }
