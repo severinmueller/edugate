@@ -66,4 +66,11 @@ class Post_model extends CI_Model
         $query = $this->db->get('categories');
         return $query->result_array();
     }
+
+    public function get_posts_by_category($category){
+        $this->db->order_by('posts.id', 'DESC');
+        $this->db->join('categories', 'categories.id = posts.category');
+        $query = $this->db->get_where('posts', array('category', $category));
+        return $query->result_array();
+    }
 }
