@@ -15,9 +15,9 @@
             $this->form_validation->set_rules('name', 'Name', 'required');
 
             if($this->form_validation->run() === FALSE){
-                $this->load->view('templates/header');
+                $this->load->view('templates/header', $data);
                 $this->load->view('categories/create', $data);
-                $this->load->view('templates/footer');
+                $this->load->view('templates/footer', $data);
             }else{
                 $this->category_model->create_category();
                 redirect('categories');
