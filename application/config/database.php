@@ -82,7 +82,7 @@ $db['default'] = array(
     'username' => $url["user"],
     'password' => $url["pass"],
     'database' => substr($url["path"], 1),
-    'dbdriver' => $url["scheme"],
+    'dbdriver' => 'postgre',
     'dbprefix' => '',
     'pconnect' => FALSE,
     'db_debug' => (ENVIRONMENT !== 'production'),
