@@ -12,7 +12,8 @@
 </form>
 <hr>
 <h3>Comments:</h3>
-<?php if(isset($comments)) : ?>
+
+<<?php if($comments) : ?>
     <?php foreach($comments as $comment) : ?>
         <div class="well">
             <h5><?php echo $comment['body']; ?> [by <strong><?php echo $comment['name']; ?></strong>]</h5>
@@ -21,29 +22,22 @@
 <?php else : ?>
     <p>No Comments To Display</p>
 <?php endif; ?>
-
-
 <hr>
 <h3>Add Comment</h3>
 <?php echo validation_errors(); ?>
-<hr>
 <?php echo form_open('comments/create/'.$post['id']); ?>
-    <div class="form-group">
-        <label>Name</label>
+<div class="form-group">
+    <label>Name</label>
     <input type="text" name="name" class="form-control">
-    </div>
+</div>
 <div class="form-group">
     <label>Email</label>
-    <input type="email" name="email" class="form-control">
+    <input type="text" name="email" class="form-control">
 </div>
 <div class="form-group">
     <label>Body</label>
-    <textarea name="name" class="form-control"></textarea>
+    <textarea name="body" class="form-control"></textarea>
 </div>
-<div class="form-group">
-    <input type="hidden" name="slug" value="<?php echo $post['slug'];?>">
-</div>
-<input type="submit" value="Post comment" class="btn btn-danger">
+<input type="hidden" name="slug" value="<?php echo $post['slug']; ?>">
+<button class="btn btn-primary" type="submit">Submit</button>
 </form>
-
-
