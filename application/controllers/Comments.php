@@ -22,7 +22,7 @@
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
             $this->form_validation->set_rules('body', 'Body', 'required');
 
-            if($this->$this->form_validation->run()===FALSE){
+            if($this->form_validation->run()===FALSE){
                 $this->load->view('templates/header', $data);
                 $this->load->view('posts/view', $data);
                 $this->load->view('templates/footer', $data);
