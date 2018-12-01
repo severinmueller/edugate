@@ -5,11 +5,11 @@
         {
             parent::__construct();
             $this->load->model('post_model');
+            $this->load->model('comment_model');
             $this->load->helper('url_helper');
             $this->load->helper('form');
             $this->load->library('form_validation');
             $this->load->helper('text');
-            $this->load->model('comment_model');
 
 
         }
