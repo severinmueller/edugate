@@ -28,12 +28,13 @@ class Posts extends CI_Controller
 
     public function view($slug = NULL){
         $data['post'] = $this->post_model->get_posts($slug);
+        $data['title'] = $data['post']['title'];
         $post_id = $data['post']['id'];
         $data['comments'] = $this->comment_model->get_comments($post_id);
         if(empty($data['post'])){
             show_404();
         }
-        $data['title'] = $data['post']['title'];
+
         $this->load->view('templates/header');
         $this->load->view('posts/view', $data);
         $this->load->view('templates/footer');
