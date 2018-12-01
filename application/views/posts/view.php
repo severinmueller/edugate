@@ -12,7 +12,7 @@
 </form>
 <hr>
 <h3>Comments:</h3>
-<?php if($comments) : ?>
+<?php if(isset($comments)) : ?>
     <?php foreach($comments as $comment) : ?>
         <div class="well">
             <h5><?php echo $comment['body']; ?> [by <strong><?php echo $comment['name']; ?></strong>]</h5>
