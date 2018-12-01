@@ -41,7 +41,7 @@
 <div class="form-group">
     <input type="hidden" name="slug" value="<?php echo $post['slug'];?>">
 </div>
-<button type="submit" value="Post comment" class="btn btn-neutral"></button>
+<input type="submit" value="Post comment" class="btn btn-danger">
 </form>
 
 
