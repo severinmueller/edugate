@@ -11,6 +11,8 @@
 <input type="submit" value="Delete" class="btn btn-danger">
 </form>
 
+<h3>Add Comment</h3>
+<?php echo validation_errors(); ?>
 <hr>
 <?php echo form_open('comments/create/'.$post['id']); ?>
     <div class="form-group">
@@ -25,7 +27,10 @@
     <label>Body</label>
     <textarea name="name" class="form-control"></textarea>
 </div>
-<button type="submit"></button>
+<div class="form-group">
+    <input type="hidden" name="slug" value="<?php echo $post['slug'];?>">
+</div>
+<button type="submit" value="Post comment" class="btn btn-neutral"></button>
 </form>
 
 
