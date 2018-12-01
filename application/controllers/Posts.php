@@ -30,6 +30,8 @@ class Posts extends CI_Controller
         $data['post'] = $this->post_model->get_posts($id);
         $data['title'] = $data['post']['title'];
 
+        $data['comments'] = $this->comment
+
         if (empty($data['post'])) {
             show_404();
         }
