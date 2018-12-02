@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-
+$route['users/register'] = 'users/register';
 $route['posts/index'] = 'posts/index';
 $route['posts/create'] = 'posts/create';
 $route['posts/update'] = 'posts/update';
