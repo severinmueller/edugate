@@ -33,10 +33,10 @@ class Posts extends CI_Controller
         if(empty($data['post'])){
             show_404();
         }
-        $data['title'] = $data['post']['id'];
-        $this->load->view('templates/header');
+        $data['title'] = $data['post']['title'];
+        $this->load->view('templates/header', $data);
         $this->load->view('posts/view', $data);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/footer',$data);
     }
 
     public function create(){
