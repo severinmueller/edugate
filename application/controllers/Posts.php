@@ -33,7 +33,7 @@ class Posts extends CI_Controller
         if(empty($data['post'])){
             show_404();
         }
-        $data['title'] = $data['post']['title'];
+        $data['title'] = $this->post_mode->get_posts($slug)->title;
         $this->load->view('templates/header');
         $this->load->view('posts/view', $data);
         $this->load->view('templates/footer');
