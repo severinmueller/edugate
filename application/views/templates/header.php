@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title><?php echo $data; ?></title>
+    <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
     <script src="https://cdn.ckeditor.com/ckeditor5/11.1.1/classic/ckeditor.js"></script>
     <link rel="stylesheet" href="<?php echo base_url("assets/css/style.css");?>">
