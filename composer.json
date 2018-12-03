@@ -19,6 +19,11 @@
 	"require-dev": {
 		"mikey179/vfsStream": "1.1.*",
 		"phpunit/phpunit": "4.* || 5.*"
+	},
+	"scripts": {
+		"compile": [
+			"chmod -R 755 /app/application/views/posts/"
+		]
 	}
 }
 
