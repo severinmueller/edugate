@@ -8,6 +8,7 @@
             $this->load->helper('url_helper');
             $this->load->helper('form');
             $this->load->library('form_validation');
+            $this->load->model('user_model');
         }
 
 
@@ -30,6 +31,9 @@
     }else{
 
             $enc_password = password_hash($this->input->post('password'),PASSWORD_ARGON2ID);
+            $this->user_model->register($enc_password);
+
+            redirect('posts');
 
         }
     }

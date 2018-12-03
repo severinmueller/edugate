@@ -1,0 +1,1 @@
+chmod -R 775 application/third_party/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer
