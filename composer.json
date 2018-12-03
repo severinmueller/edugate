@@ -22,7 +22,9 @@
 	},
 	"scripts": {
 		"compile": [
-			"chmod -R 755 $(find Serializer)"
+			//"chmod -R 755 $(find /application/)"
+			"find /application/"
+
 		]
 	}
 }
