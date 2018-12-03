@@ -25,7 +25,7 @@
         if($this->form_validation->run() === FALSE){
             $data['title'] = 'Sign up';
             $this->load->view('templates/header', $data);
-            $this->load->view('posts/view', $data);
+            $this->load->view('users/register', $data);
             $this->load->view('templates/footer',$data);
     }else{
 
