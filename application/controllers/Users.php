@@ -8,8 +8,6 @@
             $this->load->helper('url_helper');
             $this->load->helper('form');
             $this->load->library('form_validation');
-            $this->load->helper('text');
-
         }
 
 
@@ -27,10 +25,12 @@
         if($this->form_validation->run() === FALSE){
             $this->load->view('template/header',$data);
             $this->load->view('users/register',$data);
-            $this->load-view('template/header');
+            $this->load-view('template/footer');
     }else{
-            die('Continue');
-}
+
+            $enc_password = password_hash($this->input->post('password'),PASSWORD_ARGON2ID);
+
+        }
     }
 }
 
