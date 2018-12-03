@@ -9,7 +9,14 @@
     </div>
     <div class="form-group">
         <label>Body</label>
-        <textarea class="form-control" name="body" placeholder="Add body..."></textarea>
+        <textarea name="body" id="editor"></textarea>
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script>
     </div>
 <div class="form-group">
     <label>Category</label>
