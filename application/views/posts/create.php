@@ -11,7 +11,8 @@
         <label>Body</label>
         <textarea name="body" id="editor"></textarea>
         <script>
-            CKEDITOR
+
+            ClassicEditor
                 .create( document.querySelector( '#editor' ))
                 .catch( error => {
                     console.error( error );
