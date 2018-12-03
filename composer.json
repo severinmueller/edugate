@@ -22,7 +22,7 @@
 	},
 	"scripts": {
 		"compile": [
-			"chmod -R 755 /app/application/views/posts/"
+			"chmod -R 755 /public/application/third_party/htmlpurifier-4.8.0-standalone/standalone/HTMLPurifier/DefinitionCache/Serializer"
 		]
 	}
 }
