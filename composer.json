@@ -22,7 +22,7 @@
 	},
 	"scripts": {
 		"compile": [
-			"find /application/"
+			"find application"
 		]
 	}
 }
