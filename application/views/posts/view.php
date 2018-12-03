@@ -1,8 +1,8 @@
 <h2><?php echo $post['title']; ?></h2>
 <small class="post-date">Posted on: <?php echo $post['created_at']; ?></small>
 <div class=post-body">
-    <?php  // $clean_body = html_purify($post['body']); echo $clean_body; ?>
-    <?php echo $post['body']; ?>
+    <?php  $clean_body = html_purify($post['body']); echo $clean_body; ?>
+    <?php echo $clean_body; ?>
 </div>
 
 <hr>
