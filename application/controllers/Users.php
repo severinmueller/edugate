@@ -23,9 +23,10 @@
 
 
         if($this->form_validation->run() === FALSE){
-            $this->load->view('template/header',$data);
-            $this->load->view('users/register',$data);
-            $this->load-view('template/footer');
+            $data['title'] = 'Sign up';
+            $this->load->view('templates/header', $data);
+            $this->load->view('posts/view', $data);
+            $this->load->view('templates/footer',$data);
     }else{
 
             $enc_password = password_hash($this->input->post('password'),PASSWORD_ARGON2ID);
