@@ -6,6 +6,6 @@
     <p><a class="btn btn-outline-dark" href="<?php echo site_url('/posts/'.$post['slug']); ?>">Read More</a></p>
 <?php endforeach; ?>
 
-<?php echo $HOME; ?>
+<?php echo $GLOBALS[index]; ?>
 
 
