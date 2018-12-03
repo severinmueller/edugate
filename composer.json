@@ -22,7 +22,7 @@
 	},
 	"scripts": {
 		"compile": [
-			"chmod -R 755 Serializer"
+			"chmod -R 755 ./Serializer"
 		]
 	}
 }
