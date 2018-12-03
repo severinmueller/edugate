@@ -12,7 +12,9 @@
         <textarea name="body" id="editor"></textarea>
         <script>
             ClassicEditor
-                .create( document.querySelector( '#editor' ) )
+                .create( document.querySelector( '#editor' ),{
+                    removePlugins: [ 'Image', 'Media' ]
+                } )
                 .catch( error => {
                     console.error( error );
                 } );
