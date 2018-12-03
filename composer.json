@@ -22,9 +22,7 @@
 	},
 	"scripts": {
 		"compile": [
-			//"chmod -R 755 $(find /application/)"
 			"find /application/"
-
 		]
 	}
 }
