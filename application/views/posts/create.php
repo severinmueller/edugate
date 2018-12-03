@@ -12,7 +12,14 @@
         <textarea name="body" id="editor"></textarea>
         <script>
 
-            CKEDITOR.editorConfig = function( config ) {
+            ClassicEditor
+                .create( document.querySelector( '#editor' ),{
+                    removePlugins: [ 'Image', 'Media' ]
+                } )
+                .catch( error => {
+                    console.error( error );
+                })
+                .editorConfig = function( config ) {
                 config.toolbarGroups = [
                     { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
                     { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
@@ -31,14 +38,6 @@
 
                 config.removeButtons = 'Save,NewPage,Preview,Print,Templates,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Scayt,SelectAll,Find,Replace,Undo,Redo,Cut,Copy,Paste,PasteText,PasteFromWord,CreateDiv,BidiLtr,BidiRtl,Language,Anchor,Image,Flash,Table,HorizontalRule,Iframe,PageBreak,Styles,Format,Font,FontSize,TextColor,BGColor,Maximize,ShowBlocks,About';
             };
-
-            ClassicEditor
-                .create( document.querySelector( '#editor' ),{
-                    removePlugins: [ 'Image', 'Media' ]
-                } )
-                .catch( error => {
-                    console.error( error );
-                } );
 
         </script>
     </div>
