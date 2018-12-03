@@ -13,9 +13,7 @@
         <script>
 
             ClassicEditor
-                .create( document.querySelector( '#editor' ),{
-                    removePlugins: [ 'Image', 'Media' ]
-                } )
+                .create( document.querySelector( '#editor' ))
                 .catch( error => {
                     console.error( error );
                 })
