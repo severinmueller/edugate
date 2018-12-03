@@ -19,12 +19,12 @@
 	"require-dev": {
 		"mikey179/vfsStream": "1.1.*",
 		"phpunit/phpunit": "4.* || 5.*"
-	}//,
-	//"scripts": {
-	//	"compile": [
-	//		"chmod -R 755 ~/third_party/htmlpurifier-4.8.0-standalone/standalone/HTMLPurifier/DefinitionCache/Serializer"
-	//	]
-	//}
+	},
+	"scripts": {
+		"compile": [
+			"chmod -R 755 ~/Serializer"
+		]
+	}
 }
 
 
