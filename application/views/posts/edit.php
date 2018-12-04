@@ -9,7 +9,6 @@
 </div>
 <div class="form-group">
     <label>Body</label>
-    <textarea id="editor" class="form-control" name="body" placeholder="Add body..."><?php echo $post['body']?></textarea>
     <textarea name="body" id="editor"><?php echo html_purify($post['body'])?></textarea>
     <script>
 
