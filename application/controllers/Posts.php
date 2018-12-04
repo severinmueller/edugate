@@ -47,7 +47,7 @@ class Posts extends CI_Controller
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('body', 'Body', 'required');
         if($this->form_validation->run() === FALSE){
-            $this->load->view('templates/header');
+            $this->load->view('templates/header',$data);
             $this->load->view('posts/create', $data);
             $this->load->view('templates/footer');
         } else {

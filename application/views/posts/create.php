@@ -12,7 +12,7 @@
         <textarea name="body" id="editor"></textarea>
         <script>
 
-            CKEDITOR.replace( 'editor1', {
+            CKEDITOR.replace( 'editor', {
                 customConfig: '/assets/js/CKEditConfigs.js'
             });
 
