@@ -61,6 +61,6 @@
 
   <?php  echo phpversion() ?>
 
-<?php echo password_hash('hey', PASSWORD_ARGON2) ?>
+<?php echo password_hash('hey', PASSWORD_ARGON2I) ?>
 
 
