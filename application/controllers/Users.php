@@ -8,7 +8,6 @@
             $this->load->helper('url_helper');
             $this->load->helper('form');
             $this->load->library('form_validation');
-            $this->load->library('session');
             $this->load->model('user_model');
         }
 
