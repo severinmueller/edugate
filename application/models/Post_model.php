@@ -35,6 +35,7 @@ class Post_model extends CI_Model
             'slug' => $slug,
             'body' => $this->input->post('body'),
             'category' => $this->input->post('category'),
+            'user_id' => $this->session->userdata('user_id'),
             'post_image' => $post_image
         );
 
