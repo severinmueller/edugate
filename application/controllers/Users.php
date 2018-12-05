@@ -66,7 +66,7 @@
                 }else{
                     $this->session->set_flashdata('user_login_fail', 'Login invalid.');
 
-                    redirect('posts');
+                    redirect('users/login');
                 }
 
             }
