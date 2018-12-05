@@ -80,33 +80,52 @@ class Posts extends CI_Controller
 
     }
     public function delete($id){
-        $this->post_model->delete_post($id);
-        redirect('posts');
+
+        if($this->session->userdata('logged_in')) {
+
+            $this->post_model->delete_post($id);
+            redirect('posts');
+        }else{
+            redirect('users/login');
+        }
+
     }
 
     public function edit($slug){
 
-        $data['post'] = $this->post_model->get_posts($slug);
-        $data['title'] = 'Edit post';
+        if($this->session->userdata('logged_in')) {
 
-        $data['categories'] = $this->post_model->get_categories();
+            $data['post'] = $this->post_model->get_posts($slug);
+            $data['title'] = 'Edit post';
+
+            $data['categories'] = $this->post_model->get_categories();
 
 
-        if (empty($data['post'])) {
-            show_404();
+            if (empty($data['post'])) {
+                show_404();
+            }
+
+            $this->load->view('templates/header', $data);
+            $this->load->view('posts/edit', $data);
+            $this->load->view('templates/footer', $data);
+
+        }else{
+            redirect('users/login');
         }
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('posts/edit', $data);
-        $this->load->view('templates/footer', $data);
 
     }
 
     public function update($id){
-        $this->post_model->update_post($id);
 
-        $this->session->set_flashdata('post_updated', 'Your post has been updated.');
+        if($this->session->userdata('logged_in')) {
 
-        redirect('posts');
+            $this->post_model->update_post($id);
+            $this->session->set_flashdata('post_updated', 'Your post has been updated.');
+            redirect('posts');
+
+        }else{
+            redirect('users/login');
+        }
+
     }
 }
