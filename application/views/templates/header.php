@@ -58,6 +58,15 @@
         <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('post_updated').'</p>'; ?>
     <?php endif; ?>
 
+    <?php if($this->session->flashdata('user_logged_in')): ?>
+        <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('user_logged_in').'</p>'; ?>
+    <?php endif; ?>
+
+
+    <?php if($this->session->flashdata('user_login_failed')): ?>
+        <?php echo '<p class="alert alert-danger" role="alert">'.$this->session->flashdata('user_login_failed').'</p>'; ?>
+    <?php endif; ?>
+
 
   <?php  echo phpversion() ?>
 
