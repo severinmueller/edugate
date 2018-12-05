@@ -31,6 +31,11 @@
             <li class="nav-item <?php if($this->uri->uri_string() == 'users/register') { echo 'active'; }?> py-1">
                 <a class="nav-link py-1" href="<?php echo base_url();?>users/register">Register </a>
             </li>
+            <li class="nav-item <?php if($this->uri->uri_string() == 'users/login') { echo 'active'; }?> py-1">
+                <a class="nav-link py-1" href="<?php echo base_url();?>users/register">Login </a>
+            </li>            <li class="nav-item <?php if($this->uri->uri_string() == 'users/logout') { echo 'active'; }?> py-1">
+                <a class="nav-link py-1" href="<?php echo base_url();?>users/logout">Logout </a>
+            </li>
 
         </ul>
 
@@ -63,10 +68,15 @@
     <?php endif; ?>
 
     <?php if($this->session->flashdata('user_login_failed')): ?>
-        <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('user_login_failed').'</p>'; ?>
+        <?php echo '<p class="alert alert-alarm" role="alert">'.$this->session->flashdata('user_login_failed').'</p>'; ?>
+    <?php endif; ?>
+
+    <?php if($this->session->flashdata('user_logged_out')): ?>
+        <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('user_logged_out').'</p>'; ?>
     <?php endif; ?>
 
 
-  <?php  echo phpversion() ?>
+
+    <?php  echo phpversion() ?>
 
 

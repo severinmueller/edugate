@@ -24,9 +24,6 @@ class User_model extends CI_Model {
         $this->db->where('username', $username);
         $result = $this->db->get('users');
         return $result->row(0)->password;
-
-
-
     }
 
 public function get_userid($username)

@@ -82,6 +82,15 @@
 
             }
         }
+
+
+        public function logout(){
+            $user_data = array('username', 'username', 'logged_in');
+            $this->session->unset_userdata($user_data);
+
+            $this->session->set_flashdata('user_logged_out', 'You are now logged out.');
+            redirect('users/login');
+        }
     }
 
 
