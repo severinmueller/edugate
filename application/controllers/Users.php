@@ -59,12 +59,23 @@
                 $hash = $this->user_model->get_hash($username);
 
                 if(password_verify($this->input->post('password'), $hash)){
+                    $user_id = $this->user_model->get_userid($username);
+
+                    $user_data = array(
+                        'user_id' => $user_id,
+                        'username' => 'username',
+                        'logged_in' => true
+                    );
+
+                    $this->session->set_userdata($user_data);
+
+
                     $this->session->set_flashdata('user_logged_in', 'You are now logged in.');
                     redirect('posts');
 
 
                 }else{
-                    $this->session->set_flashdata('user_login_fail', 'Login invalid.');
+                    $this->session->set_flashdata('user_login_failed', 'Login invalid.');
 
                     redirect('users/login');
                 }
