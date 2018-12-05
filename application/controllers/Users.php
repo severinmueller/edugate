@@ -8,6 +8,7 @@
             $this->load->helper('url_helper');
             $this->load->helper('form');
             $this->load->library('form_validation');
+            $this->load->library('session');
             $this->load->model('user_model');
         }
 
@@ -32,6 +33,8 @@
 
             $enc_password = password_hash($this->input->post('password'),PASSWORD_ARGON2ID);
             $this->user_model->register($enc_password);
+
+            $this->session->set_flashdata('user_registered', 'You are now registered.');
 
             redirect('posts');
 
