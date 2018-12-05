@@ -32,7 +32,8 @@
     }else{
 
             $password = $this->input->post('password');
-            $enc_password = password_hash('12345', PASSWORD_ARGON2ID);
+            $enc_password = 'hey';
+            //password_hash('12345', PASSWORD_ARGON2ID);
             $this->user_model->register($enc_password);
 
             $this->session->set_flashdata('user_registered', 'You are now registered.');
