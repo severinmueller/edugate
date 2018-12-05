@@ -36,7 +36,7 @@
 
             $this->session->set_flashdata('user_registered', 'You are now registered.');
 
-            redirect('posts');
+            redirect('users/login');
 
         }
     }
