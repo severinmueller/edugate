@@ -28,6 +28,9 @@
             <li class="nav-item <?php if($this->uri->uri_string() == 'categories') { echo 'active'; }?> py-1">
                 <a class="nav-link py-1" href="<?php echo base_url();?>categories">Categories </a>
             </li>
+            <li class="nav-item <?php if($this->uri->uri_string() == 'users/register') { echo 'active'; }?> py-1">
+                <a class="nav-link py-1" href="<?php echo base_url();?>users/register">Register </a>
+            </li>
 
         </ul>
 
