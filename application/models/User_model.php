@@ -30,7 +30,7 @@ public function get_userid($username)
 {
     $this->db->where('username', $username);
     $result = $this->db->get('users');
-    return $result->row(0)->user_id;
+    return $result->row(0)->id;
 
 
 
