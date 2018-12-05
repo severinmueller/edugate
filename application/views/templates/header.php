@@ -44,6 +44,7 @@
             <?php endif; ?>
         </ul>
 
+        <?php if($this->session->userdata('logged_in')) : ?>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item <?php if($this->uri->uri_string() == 'posts/create') { echo 'active'; }?> py-1">
                 <a class="nav-link py-1" href="<?php echo base_url();?>posts/create">Create post </a>
@@ -52,6 +53,8 @@
                 <a class="nav-link py-1" href="<?php echo base_url();?>categories/create">Create category </a>
             </li>
         </ul>
+        <?php endif; ?>
+
     </div>
 </nav>
 
