@@ -54,32 +54,38 @@
                 $this->load->view('templates/footer',$data);
             }else {
 
-                $username = $this->input->post('username');
+                if(!$this->session->userdata('logged_in')){
 
-                $hash = $this->user_model->get_hash($username);
+                    $username = $this->input->post('username');
 
-                if(password_verify($this->input->post('password'), $hash)){
-                    $user_id = $this->user_model->get_userid($username);
+                    $hash = $this->user_model->get_hash($username);
 
-                    $user_data = array(
-                        'user_id' => $user_id,
-                        'username' => 'username',
-                        'logged_in' => true
-                    );
+                    if(password_verify($this->input->post('password'), $hash)){
+                        $user_id = $this->user_model->get_userid($username);
 
-                    $this->session->set_userdata($user_data);
+                        $user_data = array(
+                            'user_id' => $user_id,
+                            'username' => 'username',
+                            'logged_in' => true
+                        );
 
-
-                    $this->session->set_flashdata('user_logged_in', 'You are now logged in.');
-                    redirect('posts');
+                        $this->session->set_userdata($user_data);
 
 
-                }else{
-                    $this->session->set_flashdata('user_login_failed', 'Login invalid.');
+                        $this->session->set_flashdata('user_logged_in', 'You are now logged in.');
+                        redirect('posts');
 
-                    redirect('users/login');
+
+                    }else{
+                        $this->session->set_flashdata('user_login_failed', 'Login invalid.');
+
+                        redirect('users/login');
+                    }
+
                 }
 
+                $this->session->set_flashdata('user_login_failed', 'Already logged in.');
+                redirect('posts');
             }
         }
 
