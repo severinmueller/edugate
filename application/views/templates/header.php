@@ -33,7 +33,7 @@
                 <a class="nav-link py-1" href="<?php echo base_url();?>users/register">Register </a>
             </li>
             <li class="nav-item <?php if($this->uri->uri_string() == 'users/login') { echo 'active'; }?> py-1">
-                <a class="nav-link py-1" href="<?php echo base_url();?>users/register">Login </a>
+                <a class="nav-link py-1" href="<?php echo base_url();?>users/login">Login </a>
             </li>
             <?php endif; ?>
 
