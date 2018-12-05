@@ -66,6 +66,9 @@ class Posts extends CI_Controller
                 $post_image = $_FILES['userfile']['name'];
             }
             $this->post_model->create_post($post_image);
+
+            $this->session->set_flashdata('post_created', 'Your post has been created.');
+
             redirect('posts');
         }
     }
@@ -94,6 +97,9 @@ class Posts extends CI_Controller
 
     public function update($id){
         $this->post_model->update_post($id);
+
+        $this->session->set_flashdata('post_updated', 'Your post has been updated.');
+
         redirect('posts');
     }
 }
