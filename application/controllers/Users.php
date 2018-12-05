@@ -53,17 +53,28 @@
                 $this->load->view('templates/header', $data);
                 $this->load->view('users/login', $data);
                 $this->load->view('templates/footer',$data);
-            }else{
+            }else {
 
-                $password = $this->input->post('password');
-                $enc_password = password_hash($password, PASSWORD_ARGON2I);
-                $this->user_model->register($enc_password);
+                $username = $this->input->post('username');
 
-                $this->session->set_flashdata('user_logged_in', 'You are now logged in.');
+                $hash = $this->user_model->get_hash($username);
 
-                redirect('posts');
+                if(password_verify($this->input->post('password'), $hash)){
+                    $this->session->set_flashdata('user_logged_in', 'You are now logged in.');
+                    die('SUCCESS');
+                    redirect('posts');
+
+
+                }else{
+                    $this->session->set_flashdata('user_login_fail', 'Login invalid.');
+
+                    redirect('posts');
+
+
+                }
 
             }
         }
-}
+    }
+
 

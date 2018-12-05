@@ -19,4 +19,15 @@ class User_model extends CI_Model {
 
 }
 
+    public function get_hash($username)
+    {
+        $this->db->where('username', $username);
+        $this->db->select('password');
+        $query = $this->db->get('users');
+        return $query;
+
+
+
+    }
+
 }
