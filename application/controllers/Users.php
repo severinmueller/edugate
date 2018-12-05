@@ -61,7 +61,6 @@
 
                 if(password_verify($this->input->post('password'), $hash)){
                     $this->session->set_flashdata('user_logged_in', 'You are now logged in.');
-                    die('SUCCESS');
                     redirect('posts');
 
 
@@ -69,8 +68,6 @@
                     $this->session->set_flashdata('user_login_fail', 'Login invalid.');
 
                     redirect('posts');
-
-
                 }
 
             }
