@@ -59,6 +59,6 @@
     <?php endif; ?>
 
 
-
+  <?php  echo phpversion() ?>
 
 

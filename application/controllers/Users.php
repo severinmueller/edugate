@@ -31,7 +31,8 @@
             $this->load->view('templates/footer',$data);
     }else{
 
-            $enc_password = password_hash($this->input->post('password'),PASSWORD_ARGON2ID);
+            $password = $this->input->post('password');
+            $enc_password = password_hash($password,PASSWORD_ARGON2ID);
             $this->user_model->register($enc_password);
 
             $this->session->set_flashdata('user_registered', 'You are now registered.');
