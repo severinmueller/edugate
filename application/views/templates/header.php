@@ -28,15 +28,20 @@
             <li class="nav-item <?php if($this->uri->uri_string() == 'categories') { echo 'active'; }?> py-1">
                 <a class="nav-link py-1" href="<?php echo base_url();?>categories">Categories </a>
             </li>
+            <?php if(!$this->session->userdata('logged_in')) : ?>
             <li class="nav-item <?php if($this->uri->uri_string() == 'users/register') { echo 'active'; }?> py-1">
                 <a class="nav-link py-1" href="<?php echo base_url();?>users/register">Register </a>
             </li>
             <li class="nav-item <?php if($this->uri->uri_string() == 'users/login') { echo 'active'; }?> py-1">
                 <a class="nav-link py-1" href="<?php echo base_url();?>users/register">Login </a>
-            </li>            <li class="nav-item <?php if($this->uri->uri_string() == 'users/logout') { echo 'active'; }?> py-1">
+            </li>
+            <?php endif; ?>
+
+            <?php if($this->session->userdata('logged_in')) : ?>
+            <li class="nav-item <?php if($this->uri->uri_string() == 'users/logout') { echo 'active'; }?> py-1">
                 <a class="nav-link py-1" href="<?php echo base_url();?>users/logout">Logout </a>
             </li>
-
+            <?php endif; ?>
         </ul>
 
         <ul class="navbar-nav ml-auto">
