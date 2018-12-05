@@ -41,5 +41,29 @@
 
         }
     }
+
+        public function login(){
+            $data['title'] = 'Sign in';
+
+            $this->form_validation->set_rules('username', 'Username', 'required');
+            $this->form_validation->set_rules('password', 'Password', 'required');
+
+
+            if($this->form_validation->run() === FALSE){
+                $this->load->view('templates/header', $data);
+                $this->load->view('users/login', $data);
+                $this->load->view('templates/footer',$data);
+            }else{
+
+                $password = $this->input->post('password');
+                $enc_password = password_hash($password, PASSWORD_ARGON2I);
+                $this->user_model->register($enc_password);
+
+                $this->session->set_flashdata('user_logged_in', 'You are now logged in.');
+
+                redirect('posts');
+
+            }
+        }
 }
 

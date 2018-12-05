@@ -8,9 +8,9 @@
             <div class="form-group">
                 <input type="password" name="password" class="form-control" placeholder="Enter password" required autofocus>
             </div>
+            <button type="submit" class="btn btn-success">Login</button>
 
         </div>
-        <button type="submit" class="btn btn-success">Login</button>
 
     </div>
 <?php echo form_close(); ?>
