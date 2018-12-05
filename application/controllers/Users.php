@@ -42,10 +42,14 @@
     }
 
         public function login(){
-            $data['title'] = 'Sign in';
+
+            if(!$this->session->userdata('logged_in')){
+
+                $data['title'] = 'Sign in';
 
             $this->form_validation->set_rules('username', 'Username', 'required');
             $this->form_validation->set_rules('password', 'Password', 'required');
+
 
 
             if($this->form_validation->run() === FALSE){
@@ -54,7 +58,6 @@
                 $this->load->view('templates/footer',$data);
             }else {
 
-                if(!$this->session->userdata('logged_in')){
 
                     $username = $this->input->post('username');
 
@@ -81,12 +84,12 @@
 
                         redirect('users/login');
                     }
-
-                }
-
-                $this->session->set_flashdata('user_login_failed', 'Already logged in.');
-                redirect('posts');
             }
+
+            }
+
+            $this->session->set_flashdata('user_login_failed', 'Already logged in.');
+            redirect('posts');
         }
 
 
