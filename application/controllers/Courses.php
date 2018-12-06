@@ -1,5 +1,5 @@
 <?php
-class courses extends CI_Controller
+class Courses extends CI_Controller
 {
 
 
