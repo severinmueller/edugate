@@ -12,6 +12,7 @@
             $this->load->helper('form');
             $this->load->library('form_validation');
             $this->load->helper('text');
+            $this->load->helper('html_purifier');
         }
 
         public function index(){
