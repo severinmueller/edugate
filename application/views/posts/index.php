@@ -1,9 +1,9 @@
-<?php foreach($posts as $post) : ?>
-<h3><?php echo $post['title']; ?></h3>
-<small class="post-date">Posted on: <?php echo $post['created_at']; ?> in <?php echo $post['name'];?></small>
-<?php echo html_purify(word_limiter($post['body'], 50)); ?>
+<?php foreach($courses as $course) : ?>
+<h3><?php echo $course['title']; ?></h3>
+<small class="post-date">Posted on: <?php echo $course['created_at']; ?> in <?php echo $course['name'];?></small>
+<?php echo html_purify(word_limiter($course['body'], 50)); ?>
 <br>
-    <p><a class="btn btn-outline-dark" href="<?php echo site_url('/posts/'.$post['slug']); ?>">Read More</a></p>
+    <p><a class="btn btn-outline-dark" href="<?php echo site_url('/courses/'.$course['slug']); ?>">Read More</a></p>
 <?php endforeach; ?>
 
 

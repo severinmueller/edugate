@@ -6,7 +6,6 @@
         {
             parent::__construct();
             $this->load->model('category_model');
-            $this->load->model('post_model');
 
             $this->load->helper('url_helper');
             $this->load->helper('form');
@@ -27,27 +26,13 @@
 
         }
 
-        public function create(){
-            $data['title'] = 'Create category';
-
-            $this->form_validation->set_rules('name', 'Name', 'required');
-
-            if($this->form_validation->run() === FALSE){
-                $this->load->view('templates/header', $data);
-                $this->load->view('categories/create', $data);
-                $this->load->view('templates/footer', $data);
-            }else{
-                $this->category_model->create_category();
-                redirect('categories');
-            }
-        }
 
         public function posts($id){
             $data['title'] = $this->category_model->get_category($id)->name;
-            $data['posts'] = $this->post_model->get_posts_by_category($id);
+            $data['posts'] = $this->category_model->get_courses_by_category($id);
 
             $this->load->view('templates/header', $data);
-            $this->load->view('posts/index', $data);
+            $this->load->view('courses/index', $data);
             $this->load->view('templates/footer', $data);
         }
 

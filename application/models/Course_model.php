@@ -13,21 +13,29 @@ class Post_model extends CI_Model
         $this->load->database();
     }
 
-    public function get_posts($slug = FALSE)
+    public function get_courses($slug = FALSE)
     {
         if($slug === FALSE){
-            $this->db->order_by('posts.id', 'DESC');
-            $this->db->join('categories', 'categories.id = posts.category');
-            $query = $this->db->get('posts');
+            $this->db->order_by('courses.id', 'DESC');
+            $this->db->join('categories', 'categories.id = courses.category');
+            $query = $this->db->get('courses');
             return $query->result_array();
         }
 
-        $query = $this->db->get_where('posts', array('slug' => $slug));
+        $query = $this->db->get_where('courses', array('slug' => $slug));
         return $query->row_array();
 
     }
 
-    public function create_post($post_image){
+    public function get_courses_by_user()
+    {
+            $user_id =  $this->session->userdata('user_id');
+            $this->db->order_by('courses.id', 'DESC');
+            $query = $this->db->get_where('courses', array('user_id' => $user_id));
+            return $query->result_array();
+    }
+
+    public function create_post(){
         $slug = url_title($this->input->post('title'));
 
         $data = array(
@@ -36,15 +44,14 @@ class Post_model extends CI_Model
             'body' => $this->input->post('body'),
             'category' => $this->input->post('category'),
             'user_id' => $this->session->userdata('user_id'),
-            'post_image' => $post_image
         );
 
-            return $this->db->insert('posts',$data);
+            return $this->db->insert('courses',$data);
     }
 
     public function delete_post($id){
         $this->db->where('id',$id);
-        $this->db->delete('posts');
+        $this->db->delete('courses');
         return true;
     }
 
@@ -59,7 +66,7 @@ class Post_model extends CI_Model
         );
 
         $this->db->where('id',$id);
-        return $this->db->update('posts',$data);
+        return $this->db->update('courses',$data);
     }
 
     public function get_categories(){
@@ -68,10 +75,10 @@ class Post_model extends CI_Model
         return $query->result_array();
     }
 
-    public function get_posts_by_category($id){
-        $this->db->order_by('posts.id', 'DESC');
-        $this->db->join('categories', 'categories.id = posts.category');
-        $query = $this->db->get_where('posts', array('category' => $id));
+    public function get_courses_by_category($id){
+        $this->db->order_by('courses.id', 'DESC');
+        $this->db->join('categories', 'categories.id = courses.category');
+        $query = $this->db->get_where('courses', array('category' => $id));
         return $query->result_array();
     }
 }
