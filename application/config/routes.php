@@ -56,6 +56,7 @@ $route['courses/create'] = 'courses/create';
 $route['courses/update'] = 'courses/update';
 $route['courses/(:any)'] = 'courses/view/$1';
 $route['courses'] = 'courses/index';
+$route['courses/manage'] = 'courses/manage';
 $route['default_controller'] = 'categories/index';
 $route['categories'] = 'categories/index';
 $route['categories/create'] = 'categories/create';
