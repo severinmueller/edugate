@@ -16,7 +16,7 @@
     ?>
 
         <section class="tiles">
-            <article class=" <?php echo "style".$style ?>">
+            <article class="<?php echo "style".$style ?>">
 									<span class="image">
 										<img src="images/pic05.jpg" alt="" />
 									</span>
