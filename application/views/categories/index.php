@@ -5,7 +5,7 @@
             <p>Entdecke jetzt das vielfältige Angebot an Weiterbildungskursen von Fachhoschulen in der ganzen Schweiz. Wähle die Kategorie, für die Du dich interessierts:</p>
         </header>
 
-
+        <section class="tiles">
     <?php $style = 0; ?>
     <?php foreach ($categories as $category) : ?>
     <?php if($style<11){
@@ -15,12 +15,12 @@
         }
     ?>
 
-        <section class="tiles">
+
             <article class="<?php echo "style".$style ?>">
 									<span class="image">
 										<img src="images/pic05.jpg" alt="" />
 									</span>
-                <a href="<?php echo site_url('/categories/courses/'.$category['id']); ?>"></a>
+                <a href="<?php echo site_url('/categories/courses/'.$category['id']); ?>">
                 <h2><?php echo $category['name']; ?></h2>
                 <div class="content">
                     <p></p>
@@ -28,6 +28,6 @@
                 </a>
             </article>
     <?php endforeach; ?>
-
-
-
+        </section>
+    </div>
+</div>
