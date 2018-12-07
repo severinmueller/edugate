@@ -17,7 +17,7 @@ class Course_model extends CI_Model
     {
         if($slug === FALSE){
             $this->db->order_by('courses.id', 'DESC');
-            $this->db->join('categories', 'categories.id = courses.category');
+            $this->db->join('categories', 'categories.id = courses.category_id');
             $query = $this->db->get('courses');
             return $query->result_array();
         }
