@@ -1,3 +1,6 @@
+<div id="main">
+    <div class="inner">
+
 <h2>Table</h2>
 <div class="table-wrapper">
     <table>
@@ -21,4 +24,5 @@
     </table>
 </div>
 
-
+    </div>
+</div>
