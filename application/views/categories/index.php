@@ -16,7 +16,7 @@
     ?>
             <article class="<?php echo "style".$style ?>">
 									<span class="image">
-										<img src="base_url(assets/images/pic05.jpg" alt="" />
+										<img src="<?php base_url('assets/images/pic05.jpg')?>" alt="" />
 									</span>
                 <a href="<?php echo site_url('/categories/courses/'.$category['id']); ?>">
                 <h2><?php echo $category['name']; ?></h2>
