@@ -20,7 +20,6 @@ class Courses extends CI_Controller
     {
         $data['title'] = 'Kurse';
         $data['courses'] = $this->course_model->get_courses();
-        $data['courses']['provider'] = $this->c
 
         $this->load->view('templates/header', $data);
         $this->load->view('courses/index', $data);
