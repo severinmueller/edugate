@@ -1,9 +1,10 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: 2
- * Date: 06.12.2018
- * Time: 21:55
- */
+<?php foreach($courses as $course) : ?>
+    <h3><?php echo $course['title']; ?></h3>
+    <small class="post-date">Posted on: <?php echo $course['created_at']; ?> in <?php echo $course['name'];?></small>
+    <?php echo html_purify(word_limiter($course['body'], 50)); ?>
+    <br>
+    <p><a class="btn btn-outline-dark" href="<?php echo site_url('/courses/'.$course['slug']); ?>">Read More</a></p>
+<?php endforeach; ?>
 
-echo "test";
+
+
