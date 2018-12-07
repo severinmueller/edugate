@@ -1,19 +1,55 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
 <head>
     <title><?php echo $title; ?></title>
-    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <script src="//cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
-    <link rel="stylesheet" href="<?php echo base_url("assets/css/style.css");?>">
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/main.css");?>">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
-<body>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
 
-<nav class="navbar navbar-expand-md navbar-light bg-light py-1">
-    <a class="navbar-brand py-1" href="/"><img src=<?php echo base_url("assets/images/edugate-schrift.png");?> alt="edugate" height="80"></a>
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+            <!-- Logo -->
+            <a href="href="<?php echo base_url();?>" class="logo">
+                <img src="images/edugate-schrift.png" alt="logo" height="100" />
+            </a>
 
+            <!-- Nav -->
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Menu -->
+    <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="<?php echo base_url();?>">Home</a></li>
+            <li><a href="<?php echo base_url();?>users/login">Login</a></li>
+            <li><a href="<?php echo base_url();?>users/register">Register</a></li>
+            <li><a href="<?php echo base_url();?>users/logout">Logout</a></li>
+            <li><a href="<?php echo base_url();?>courses/create">Create course</a></li>
+        </ul>
+    </nav>
+
+
+<!--
     <div class="collapse navbar-collapse" id="navbarSuspportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item <?php if($this->uri->uri_string() == '') { echo 'active'; }?> py-1" >
@@ -57,6 +93,7 @@
 
     </div>
 </nav>
+-->
 
 <div class="container">
     <?php if($this->session->flashdata('user_registered')): ?>
@@ -82,9 +119,5 @@
     <?php if($this->session->flashdata('user_logged_out')): ?>
         <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('user_logged_out').'</p>'; ?>
     <?php endif; ?>
-
-
-
-    <?php  echo phpversion() ?>
-
+</div>
 
