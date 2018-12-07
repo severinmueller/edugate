@@ -12,6 +12,7 @@
     <script src="//cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
     <link rel="stylesheet" href="<?php echo base_url("assets/css/main.css");?>">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="icon" type="image/png"ref="<?php echo base_url('assets/images/favicon-32x32.png');?>"/>
 </head>
 <body class="is-preload">
 <!-- Wrapper -->
