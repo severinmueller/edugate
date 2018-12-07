@@ -15,7 +15,7 @@
         }
 
         public function index(){
-            $data['title'] = 'Categories';
+            $data['title'] = 'Edugate';
 
             $data['categories'] = $this->category_model->get_categories();
 

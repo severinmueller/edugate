@@ -88,7 +88,7 @@
 
             }else{
                 $this->session->set_flashdata('user_login_failed', 'Already logged in.');
-                redirect('posts');
+                redirect('courses/manage');
             }
         }
 
