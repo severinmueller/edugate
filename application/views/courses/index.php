@@ -4,8 +4,8 @@
         <thead>
         <tr>
             <th>Kurs</th>
-            <th>Anbieter</th>
             <th>Ort</th>
+            <th>Anbieter</th>
             <th>Startdatum</th>
         </tr>
         </thead>
