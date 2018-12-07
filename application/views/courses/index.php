@@ -1,5 +1,4 @@
 <h2>Table</h2>
-<h3>Default</h3>
 <div class="table-wrapper">
     <table>
         <thead>

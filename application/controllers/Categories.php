@@ -27,7 +27,7 @@
         }
 
 
-        public function posts($id){
+        public function courses($id){
             $data['title'] = $this->category_model->get_category($id)->name;
             $data['posts'] = $this->category_model->get_courses_by_category($id);
 
