@@ -6,6 +6,8 @@
         {
             parent::__construct();
             $this->load->model('category_model');
+            $this->load->model('course_model');
+
 
             $this->load->helper('url_helper');
             $this->load->helper('form');
@@ -29,7 +31,7 @@
 
         public function courses($id){
             $data['title'] = $this->category_model->get_category($id)->name;
-            $data['posts'] = $this->category_model->get_courses_by_category($id);
+            $data['posts'] = $this->course_model->get_courses_by_category($id);
 
             $this->load->view('templates/header', $data);
             $this->load->view('courses/index', $data);
