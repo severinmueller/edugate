@@ -18,6 +18,7 @@ class Course_model extends CI_Model
         if($slug === FALSE){
             $this->db->order_by('courses.id', 'DESC');
             $this->db->join('categories', 'categories.id = courses.category_id');
+            $this->db->join('users', 'users.id = courses.user_id');
             $query = $this->db->get('courses');
             return $query->result_array();
         }
@@ -78,6 +79,7 @@ class Course_model extends CI_Model
     public function get_courses_by_category($id){
         $this->db->order_by('courses.id', 'DESC');
         $this->db->join('categories', 'categories.id = courses.category_id');
+        $this->db->join('users', 'users.id = courses.user_id');
         $query = $this->db->get_where('courses', array('category_id' => $id));
         return $query->result_array();
     }
