@@ -33,7 +33,7 @@ class Courses extends CI_Controller
             $data['courses'] = $this->course_model->get_courses_by_user();
 
             $this->load->view('templates/header', $data);
-            $this->load->view('courses/manage', $data);
+            $this->load->view('manage', $data);
             $this->load->view('templates/footer', $data);
         } else {
             redirect('users/login');
