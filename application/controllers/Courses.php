@@ -26,7 +26,7 @@ class Courses extends CI_Controller
         $this->load->view('templates/footer', $data);
     }
 
-    public function manage_courses()
+    public function manage()
     {
         if ($this->session->userdata('logged_in')) {
             $data['title'] = 'Kursverwaltung';
@@ -125,4 +125,7 @@ class Courses extends CI_Controller
         }
 
     }
+
+
+
 }

@@ -76,7 +76,7 @@
 
 
                         $this->session->set_flashdata('user_logged_in', 'You are now logged in.');
-                        redirect('posts');
+                        redirect('courses/manage');
 
 
                     }else{
