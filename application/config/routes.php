@@ -52,10 +52,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['users/register'] = 'users/register';
 
+$route['courses/manage'] = 'courses/manage';
 $route['courses/index'] = 'courses/index';
 $route['courses/create'] = 'courses/create';
 $route['courses/update'] = 'courses/update';
-$route['manage'] = 'courses/manage';
 $route['courses/(:any)'] = 'courses/view/$1';
 $route['courses'] = 'courses/index';
 
