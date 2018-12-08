@@ -6,14 +6,16 @@
         </header>
 
         <?php
-        // the message
-        $msg = "First line of text\nSecond line of text";
+        $this->load->library('email');
 
-        // use wordwrap() if lines are longer than 70 characters
-        $msg = wordwrap($msg,70);
+        $this->email->from('your@example.com', 'Your Name');
+        $this->email->to('severin.mueller@students.fhnw.ch');
+        $this->email->subject('Email Test');
+        $this->email->message('Testing the email class.');
+        $this->email->send();
 
-        // send email
-        mail("severin.mueller@students.fhnw.ch","My subject",$msg);
+        echo $this->email->print_debugger();
+        ?>
         ?>
 
         <section class="tiles">
