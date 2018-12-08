@@ -76,8 +76,8 @@
 
                         if($this->input->post('rememberme')){
                             $this->session->set_flashdata('user_logged_in', 'You are now logged in with rememberme.');
-
-
+                            $this->session->sess_expiration = 72000;
+                            $this->session->sess_expire_on_close = TRUE;
                         }else{
                             $this->session->set_flashdata('user_logged_in', 'You are now logged in. no rememberme');
                         }
