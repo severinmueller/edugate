@@ -34,13 +34,11 @@ $this->email->initialize(array(
   'newline' => "\r\n"
 ));
 
-$this->email->from('app115613062@heroku.com');
+$this->email->from('severin.mueller@students.fhnw.ch');
 $this->email->to('severin.mueller@students.fhnw.ch');
 $this->email->subject('Email Test');
 $this->email->message('Testing the email class.');
 $this->email->send();
-
-
 
 
         $data['emaildebug'] = $this->email->print_debugger();
