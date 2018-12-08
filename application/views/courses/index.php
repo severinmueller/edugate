@@ -1,6 +1,7 @@
 <div id="main">
     <div class="inner">
 
+        <?php echo $emaildebug ?>
 <h2>Table</h2>
 <div class="table-wrapper">
     <table>

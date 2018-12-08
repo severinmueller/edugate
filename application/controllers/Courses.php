@@ -29,6 +29,7 @@ class Courses extends CI_Controller
         $this->email->message('Testing the email class.');
         $this->email->send();
 
+        $data['emaildebug'] = $this->email->print_debugger();
 
         $this->load->view('templates/header', $data);
         $this->load->view('courses/index', $data);
