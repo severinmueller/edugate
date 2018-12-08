@@ -23,7 +23,7 @@ class Courses extends CI_Controller
         $data['title'] = 'Kurse';
         $data['courses'] = $this->course_model->get_courses();
 
-        $this->email->from('your@example.com', 'Your Name');
+        $this->email->from('app115613062@heroku.com', 'Your Name');
         $this->email->to('severin.mueller@students.fhnw.ch');
         $this->email->subject('Email Test');
         $this->email->message('Testing the email class.');
