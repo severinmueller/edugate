@@ -74,8 +74,13 @@
 
                         $this->session->set_userdata($user_data);
 
+                        if($this->input->post('rememberme')){
+                            $this->session->set_flashdata('user_logged_in', 'You are now logged in with rememberme.');
 
-                        $this->session->set_flashdata('user_logged_in', 'You are now logged in.');
+
+                        }else{
+                            $this->session->set_flashdata('user_logged_in', 'You are now logged in. no rememberme');
+                        }
                         redirect('courses/manage');
 
 
