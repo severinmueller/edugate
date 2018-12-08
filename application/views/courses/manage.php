@@ -23,7 +23,7 @@
                         <td><?php echo $course['name']; ?></td>
                         <td><?php echo $course['start_date']; ?></td>
                         <td><a class="button" href="edit/<?php echo $course['slug'];?>">Bearbeiten</a></td>
-                        <td><a class="button" href="delete/<?php echo $course['id'];?>">Löschen</a></td>
+                        <td><a class="button" href="delete/<?php echo $course['courses.id'];?>">Löschen</a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
