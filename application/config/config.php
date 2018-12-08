@@ -387,12 +387,12 @@ $config['sess_regenerate_destroy'] = FALSE;
 
 if ((isset($_COOKIE['autologin']) && $_COOKIE['autologin'] == 1) || (isset($_POST['rememberme'])))
 {
-    $config['sess_expiration']      = 31536000;
+    $config['sess_expiration'] = 31536000;
     $config['sess_expire_on_close'] = FALSE;
 }
 else
 {
-    $config['sess_expiration']      = 0;
+    $config['sess_expiration'] = 0;
     $config['sess_expire_on_close'] = TRUE;
 }
 
