@@ -35,7 +35,7 @@ $this->email->initialize(array(
 ));
 
 $this->email->from('edugate@sendgrid.me');
-$this->email->to('tsumuugii@gmail.com');
+$this->email->to('severin.mueller@students.fhnw.ch');
 $this->email->subject('Email Test');
 $this->email->message('Testing the email class.');
 $this->email->send();
