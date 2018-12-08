@@ -34,7 +34,7 @@ $this->email->initialize(array(
   'newline' => "\r\n"
 ));
 
-$this->email->from('severin.students.fhnw.ch');
+$this->email->from('app115613062@heroku.com');
 $this->email->to('severin.students.fhnw.ch');
 $this->email->subject('Email Test');
 $this->email->message('Testing the email class.');
