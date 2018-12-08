@@ -136,7 +136,7 @@ $this->email->send();
 
     public function update($id){
 
-        if($this->session->userdata('logged_in')) {
+        if($this->session->userdata('logged_in') && ($this->session->userdata('user_id') == $this->course_model->get_course_userid($id))) {
 
             $this->course_model->update_course($id);
             $this->session->set_flashdata('course_updated', 'Your course has been updated.');
