@@ -34,7 +34,7 @@ $this->email->initialize(array(
   'newline' => "\r\n"
 ));
 
-$this->email->from('severin.mueller@students.fhnw.ch');
+$this->email->from('noreplay@edugate.ch');
 $this->email->to('severin.mueller@students.fhnw.ch');
 $this->email->subject('Email Test');
 $this->email->message('Testing the email class.');
