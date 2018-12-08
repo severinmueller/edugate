@@ -1,8 +1,7 @@
 <div id="main">
     <div class="inner">
 
-        <?php echo $emaildebug ?>
-        <h2><?php echo $data['title'] ?></h2>
+        <h2>Meine Kurse</h2>
         <div class="table-wrapper">
             <table>
                 <thead>
