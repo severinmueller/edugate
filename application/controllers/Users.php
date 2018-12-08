@@ -48,8 +48,8 @@
 
                 $data['title'] = 'Sign in';
 
-                $this->form_validation->set_rules('username', 'Username', 'required');
-                $this->form_validation->set_rules('password', 'Password', 'required');
+                $this->form_validation->set_rules('email', 'E-Mail', 'required');
+                $this->form_validation->set_rules('password', 'Passwort', 'required');
 
 
                 if ($this->form_validation->run() === FALSE) {
