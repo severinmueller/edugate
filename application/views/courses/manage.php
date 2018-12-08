@@ -22,8 +22,8 @@
                         <td><?php echo $course['location']; ?></td>
                         <td><?php echo $course['name']; ?></td>
                         <td><?php echo $course['start_date']; ?></td>
-                        <td><a class="btn btn-default" href="edit/<?php echo $course['slug'];?>">Bearbeiten</a></td>
-                        <td><?php echo form_open('courses/delete/'.$course['id']); ?> <input type="submit" value="Delete" class="btn btn-danger"></form></td>
+                        <td><a class="button" href="edit/<?php echo $course['slug'];?>">Bearbeiten</a></td>
+                        <td><?php echo form_open('courses/delete/'.$course['id']); ?> <input type="submit" value="Löschen" class="button"></form></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
