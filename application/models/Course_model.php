@@ -38,7 +38,7 @@ class Course_model extends CI_Model
             return $query->result_array();
     }
 
-    public function create_post(){
+    public function create_course(){
         $slug = url_title($this->input->post('title'));
 
         $data = array(
@@ -52,13 +52,13 @@ class Course_model extends CI_Model
             return $this->db->insert('courses',$data);
     }
 
-    public function delete_post($id){
+    public function delete_course($id){
         $this->db->where('id',$id);
         $this->db->delete('courses');
         return true;
     }
 
-    public function update_post($id){
+    public function update_course($id){
         $slug = url_title($this->input->post('title'));
 
         $data = array(
