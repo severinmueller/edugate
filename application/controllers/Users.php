@@ -106,7 +106,7 @@
             $this->session->set_flashdata('user_logged_out', 'You are now logged out.');
             redirect('users/login');
         }else{
-                redirect('posts');
+                redirect('');
             }
         }
     }
