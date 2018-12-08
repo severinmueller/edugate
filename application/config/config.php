@@ -385,14 +385,14 @@ $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
 
-if ((isset($_COOKIE['autologin']) && $_COOKIE['autologin'] == 1) || (isset($_POST['rememberme'])))
+if ((isset($_COOKIE['autologin']) && $_COOKIE['autologin'] == 1) || (isset($_POST['autologin']) && $_POST['autologin'] == 1))
 {
-    $config['sess_expiration'] = 31536000;
+    $config['sess_expiration']      = 31536000;
     $config['sess_expire_on_close'] = FALSE;
 }
 else
 {
-    $config['sess_expiration'] = 0;
+    $config['sess_expiration']      = 0;
     $config['sess_expire_on_close'] = TRUE;
 }
 

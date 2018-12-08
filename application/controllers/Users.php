@@ -75,8 +75,12 @@
                         $this->session->set_userdata($user_data);
 
 
-                        if($this->input->post('rememberme')){
-                            $this->load->helper("cookie");
+                        $this->load->helper("cookie");
+
+                        $autoLogin = $this->input->post("autologin",true);
+
+                        if ($autoLogin == 1)
+                        {
                             $cookie = array(
                                 'name'   => 'autologin',
                                 'value'  => '1',
@@ -84,11 +88,15 @@
                                 'path'   => '/'
                             );
                             $this->input->set_cookie($cookie);
-                        }else{
-                            $this->load->helper("cookie");
+                            $this->session->set_flashdata('user_logged_in', 'You are now logged in. with autologing');
+
+                        }
+                        else
+                        {
                             delete_cookie("autologin");
                             $this->session->set_flashdata('user_logged_in', 'You are now logged in. no rememberme');
                         }
+
                         redirect('courses/manage');
 
 
