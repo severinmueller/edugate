@@ -65,7 +65,7 @@ class Course_model extends CI_Model
             'title' => $this->input->post('title'),
             'slug' => $slug,
             'body' => $this->input->post('body'),
-            'category' => $this->input->post('category')
+            'category_id' => $this->input->post('category')
         );
 
         $this->db->where('id',$id);
