@@ -12,8 +12,6 @@ class Courses extends CI_Controller
         $this->load->library('form_validation');
         $this->load->helper('text');
         $this->load->helper('htmlpurifier');
-        $this->load->library('email');
-
 
     }
 
@@ -23,11 +21,26 @@ class Courses extends CI_Controller
         $data['title'] = 'Kurse';
         $data['courses'] = $this->course_model->get_courses();
 
-        $this->email->from('app115613062@heroku.com', 'Your Name');
-        $this->email->to('severin.mueller@students.fhnw.ch');
-        $this->email->subject('Email Test');
-        $this->email->message('Testing the email class.');
-        $this->email->send();
+
+$this->load->library('email');
+
+$this->email->initialize(array(
+  'protocol' => 'smtp',
+  'smtp_host' => 'smtp.sendgrid.net',
+  'smtp_user' => getenv("SENDGRID_USERNAME"),
+  'smtp_pass' => getenv("SENDGRID_password"),
+  'smtp_port' => 587,
+  'crlf' => "\r\n",
+  'newline' => "\r\n"
+));
+
+
+$this->email->subject('Email Test');
+$this->email->message('Testing the email class.');
+$this->email->send();
+
+
+
 
         $data['emaildebug'] = $this->email->print_debugger();
 
