@@ -76,8 +76,17 @@
 
 
                         if($this->input->post('rememberme')){
-                            $this->session->set_userdata('rememberme', $this->input->post('rememberme'));
+                            $this->load->helper("cookie");
+                            $cookie = array(
+                                'name'   => 'autologin',
+                                'value'  => '1',
+                                'expire' => '31536000',
+                                'path'   => '/'
+                            );
+                            $this->input->set_cookie($cookie);
                         }else{
+                            $this->load->helper("cookie");
+                            delete_cookie("autologin");
                             $this->session->set_flashdata('user_logged_in', 'You are now logged in. no rememberme');
                         }
                         redirect('courses/manage');
