@@ -23,7 +23,7 @@
                         <td><?php echo $course['name']; ?></td>
                         <td><?php echo $course['start_date']; ?></td>
                         <td><a class="button" href="edit/<?php echo $course['slug'];?>">Bearbeiten</a></td>
-                        <td><?php echo form_open('courses/delete/'.$course['id']); ?> <input type="submit" value="Löschen" class="button"></form></td>
+                        <td><a class="button" href="delete/<?php echo $course['id'];?>">Löschen</a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
