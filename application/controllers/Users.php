@@ -16,7 +16,8 @@
         public function register(){
             $data['title'] = 'Sign up';
 
-            $this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]|required|valid_email', array('is_unique' => 'This %s already exists.'));
+            $this->form_validation->set_rules('name', 'Organisation', 'required|is_unique[users.name]', array('is_unique' => 'This %s already exists.'));
+            $this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]|valid_email', array('is_unique' => 'This %s already exists.'));
             $this->form_validation->set_rules('password', 'Password', 'required');
             $this->form_validation->set_rules('password', 'Password', 'required');
             $this->form_validation->set_rules('password2', 'Confirm password', 'required|matches[password]');

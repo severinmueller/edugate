@@ -12,7 +12,7 @@
 </div>
         <div class="form-group">
             <label>Name der Organisation</label>
-            <input type="text" class="form-control" name="Organisation" placeholder="z. B. FHNW">
+            <input type="text" class="form-control" name="name" placeholder="z. B. FHNW">
         </div>
 <div class="form-group">
     <label>Password</label>
