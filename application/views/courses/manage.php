@@ -18,7 +18,7 @@
                         <td><a href="<?php echo site_url('/courses/'.$course['slug']); ?>"><?php echo $course['title']; ?></a></td>
                         <td><?php echo $course['location']; ?></td>
                         <td><?php echo $course['name']; ?></td>
-                        <td><?php echo $course['date']; ?></td>
+                        <td><?php echo $course['start_date']; ?></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
