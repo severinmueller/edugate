@@ -53,7 +53,7 @@ class Course_model extends CI_Model
     }
 
     public function delete_course($id){
-        $this->db->where('id',$id);
+        $this->db->where('courseid',$id);
         $this->db->delete('courses');
         return true;
     }
