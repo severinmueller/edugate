@@ -1,4 +1,7 @@
-<h2><?php $title ?></h2>
+<div id="main">
+    <div class="inner">
+
+        <h2><?php echo $data['title'] ?></h2>
 
 <?php echo validation_errors(); ?>
 
@@ -29,3 +32,6 @@
 
 <button type="submit" class="button">Submit</button>
 </form>
+
+    </div>
+</div>
