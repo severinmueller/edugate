@@ -5,6 +5,17 @@
             <p>Entdecke jetzt das vielfältige Angebot an Weiterbildungskursen von Fachhoschulen in der ganzen Schweiz. Wähle die Kategorie, für die Du dich interessierts:</p>
         </header>
 
+        <?php
+        // the message
+        $msg = "First line of text\nSecond line of text";
+
+        // use wordwrap() if lines are longer than 70 characters
+        $msg = wordwrap($msg,70);
+
+        // send email
+        mail("severin.mueller@students.fhnw.ch","My subject",$msg);
+        ?>
+
         <section class="tiles">
     <?php $style = 0; ?>
     <?php foreach ($categories as $category) : ?>
