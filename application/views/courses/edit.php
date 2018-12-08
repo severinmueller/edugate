@@ -2,7 +2,7 @@
 
 <?php echo validation_errors(); ?>
 
-<?php echo form_open('courses/update/'.$course['id']); ?>
+<?php echo form_open('courses/update/'.$course['courseid']); ?>
 <div class="form-group">
     <label>Title</label>
     <input type="text" class="form-control" name="title" placeholder="Add title..." value="<?php echo $course['title']?>">
