@@ -34,7 +34,7 @@ $this->email->initialize(array(
   'newline' => "\r\n"
 ));
 
-$this->email->from('info@edugate.ch ');
+$this->email->from('edugate@sendgrid.me');
 $this->email->to('tsumuugii@gmail.com');
 $this->email->subject('Email Test');
 $this->email->message('Testing the email class.');
