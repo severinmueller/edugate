@@ -1,7 +1,7 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: 2
- * Date: 06.12.2018
- * Time: 21:56
- */
+<h2><?php echo $course['title']; ?></h2>
+<div class=post-body">
+    <?php  $clean_body = html_purify($course['body']); echo $clean_body; ?>
+
+</div>
+
+<hr>
