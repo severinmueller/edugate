@@ -12,6 +12,8 @@ class Courses extends CI_Controller
         $this->load->library('form_validation');
         $this->load->helper('text');
         $this->load->helper('htmlpurifier');
+        $this->load->library('email');
+
 
     }
 
@@ -20,6 +22,13 @@ class Courses extends CI_Controller
     {
         $data['title'] = 'Kurse';
         $data['courses'] = $this->course_model->get_courses();
+
+        $this->email->from('your@example.com', 'Your Name');
+        $this->email->to('severin.mueller@students.fhnw.ch');
+        $this->email->subject('Email Test');
+        $this->email->message('Testing the email class.');
+        $this->email->send();
+
 
         $this->load->view('templates/header', $data);
         $this->load->view('courses/index', $data);

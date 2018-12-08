@@ -5,18 +5,6 @@
             <p>Entdecke jetzt das vielfältige Angebot an Weiterbildungskursen von Fachhoschulen in der ganzen Schweiz. Wähle die Kategorie, für die Du dich interessierts:</p>
         </header>
 
-        <?php
-        $this->load->library('email');
-
-        $this->email->from('your@example.com', 'Your Name');
-        $this->email->to('severin.mueller@students.fhnw.ch');
-        $this->email->subject('Email Test');
-        $this->email->message('Testing the email class.');
-        $this->email->send();
-
-        echo $this->email->print_debugger();
-        ?>
-        ?>
 
         <section class="tiles">
     <?php $style = 0; ?>
