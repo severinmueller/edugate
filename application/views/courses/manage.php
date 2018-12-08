@@ -1,11 +1,29 @@
-<?php foreach($courses as $course) : ?>
-    <h3><?php echo $course['title']; ?></h3>
-    <?php echo html_purify(word_limiter($course['body'], 50)); ?>
-    <br>
-    <p><a class="btn btn-outline-dark" href="<?php echo site_url('/courses/'.$course['slug']); ?>">Read More</a></p>
-<?php endforeach; ?>
+<div id="main">
+    <div class="inner">
 
-<?php echo "hallo"?>
+        <?php echo $emaildebug ?>
+        <h2><?php echo $data['title'] ?></h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Kurs</th>
+                    <th>Ort</th>
+                    <th>Anbieter</th>
+                    <th>Startdatum</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach($courses as $course) : ?>
+                    <tr>
+                        <td><a href="<?php echo site_url('/courses/'.$course['slug']); ?>"><?php echo $course['title']; ?></a></td>
+                        <td><?php echo $course['location']; ?></td>
+                        <td><?php echo $course['name']; ?></td>
+                        <td><?php echo $course['date']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
 
-
-
+    </div>
+</div>
