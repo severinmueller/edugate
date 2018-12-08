@@ -100,7 +100,7 @@ $this->email->send();
     }
     public function delete($id){
 
-        if($this->session->userdata('logged_in')) {
+        if($this->session->userdata('logged_in') && ($this->session->userdata('user_id') == $this->course_model->get_course_userid($id))) {
 
             $this->course_model->delete_course($id);
             redirect('courses');

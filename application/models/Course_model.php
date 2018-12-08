@@ -85,4 +85,10 @@ class Course_model extends CI_Model
         $query = $this->db->get_where('courses', array('category_id' => $id));
         return $query->result_array();
     }
+
+    public function get_course_userid($id){
+        $this->db->where('id', $id);
+        $result = $this->db->get('courses');
+        return $result->row(0)->user_id;
+    }
 }

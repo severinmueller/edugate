@@ -14,7 +14,7 @@
 
 
         public function register(){
-            $data['title'] = 'Sign up';
+            $data['title'] = 'Registrieren';
 
             $this->form_validation->set_rules('name', 'Organisation', 'required|is_unique[users.name]', array('is_unique' => 'This %s already exists.'));
             $this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]|valid_email', array('is_unique' => 'This %s already exists.'));
@@ -46,7 +46,7 @@
 
             if (!$this->session->userdata('logged_in')) {
 
-                $data['title'] = 'Sign in';
+                $data['title'] = 'Anmelden';
 
                 $this->form_validation->set_rules('email', 'E-Mail', 'required');
                 $this->form_validation->set_rules('password', 'Passwort', 'required');
