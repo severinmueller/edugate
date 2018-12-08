@@ -10,6 +10,9 @@
                     <th>Ort</th>
                     <th>Anbieter</th>
                     <th>Startdatum</th>
+                    <th>Bearbeiten</th>
+                    <th>Löschen</th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -19,6 +22,8 @@
                         <td><?php echo $course['location']; ?></td>
                         <td><?php echo $course['name']; ?></td>
                         <td><?php echo $course['start_date']; ?></td>
+                        <td><a class="btn btn-default" href="edit/<?php echo $course['slug'];?>">Bearbeiten</a></td>
+                        <td><?php echo form_open('courses/delete/'.$course['id']); ?> <input type="submit" value="Delete" class="btn btn-danger"></form></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
