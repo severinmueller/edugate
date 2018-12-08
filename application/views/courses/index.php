@@ -16,10 +16,10 @@
         <tbody>
         <?php foreach($courses as $course) : ?>
         <tr>
-            <td><?php echo $course['title']; ?></td>
-            <td><a class="btn btn-outline-dark" href="<?php echo site_url('/courses/'.$course['slug']); ?>">Read More</a></td>
+            <td><a href="<?php echo site_url('/courses/'.$course['slug']); ?>"><?php echo $course['title']; ?></a></td>
+            <td><?php echo $course['location']; ?></td>
             <td><?php echo $course['name']; ?></td>
-            <td>29.99</td>
+            <td><?php echo $course['date']; ?></td>
         </tr>
         <?php endforeach; ?>
     </table>
