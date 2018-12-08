@@ -11,24 +11,22 @@ class User_model extends CI_Model {
         $data = array(
             'name' => $this->input->post('name'),
             'email' => $this->input->post('email'),
-            'username' => $this->input->post('username'),
             'password' => $enc_password,
-            'zipcode' => $this->input->post('zipcode')
         );
         return $this->db->insert('users', $data);
 
 }
 
-    public function get_hash($username)
+    public function get_hash($email)
     {
-        $this->db->where('username', $username);
+        $this->db->where('email', $email);
         $result = $this->db->get('users');
         return $result->row(0)->password;
     }
 
-public function get_userid($username)
+public function get_userid($email)
 {
-    $this->db->where('username', $username);
+    $this->db->where('email', $email);
     $result = $this->db->get('users');
     return $result->row(0)->id;
 

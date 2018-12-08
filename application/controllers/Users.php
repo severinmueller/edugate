@@ -41,73 +41,53 @@
         }
     }
 
-        public function login(){
+        public function login()
+        {
 
-            if(!$this->session->userdata('logged_in')){
+            if (!$this->session->userdata('logged_in')) {
 
                 $data['title'] = 'Sign in';
 
-            $this->form_validation->set_rules('username', 'Username', 'required');
-            $this->form_validation->set_rules('password', 'Password', 'required');
+                $this->form_validation->set_rules('username', 'Username', 'required');
+                $this->form_validation->set_rules('password', 'Password', 'required');
 
 
+                if ($this->form_validation->run() === FALSE) {
+                    $this->load->view('templates/header', $data);
+                    $this->load->view('users/login', $data);
+                    $this->load->view('templates/footer', $data);
+                } else {
 
-            if($this->form_validation->run() === FALSE){
-                $this->load->view('templates/header', $data);
-                $this->load->view('users/login', $data);
-                $this->load->view('templates/footer',$data);
-            }else {
 
+                    $email = $this->input->post('email');
 
-                    $username = $this->input->post('username');
+                    $hash = $this->user_model->get_hash($email);
 
-                    $hash = $this->user_model->get_hash($username);
-
-                    if(password_verify($this->input->post('password'), $hash)){
-                        $user_id = $this->user_model->get_userid($username);
+                    if (password_verify($this->input->post('password'), $hash)) {
+                        $user_id = $this->user_model->get_userid($email);
 
                         $user_data = array(
                             'user_id' => $user_id,
-                            'username' => 'username',
+                            'email' => 'email',
                             'logged_in' => true
                         );
 
                         $this->session->set_userdata($user_data);
 
 
-                        $this->load->helper("cookie");
-
-                        $autoLogin = $this->input->post("autologin",true);
-
-                        if ($autoLogin == 1)
-                        {
-                            $cookie = array(
-                                'name'   => 'autologin',
-                                'value'  => '1',
-                                'expire' => '31536000',
-                                'path'   => '/'
-                            );
-                            $this->input->set_cookie($cookie);
-                            $this->session->set_flashdata('user_logged_in', 'You are now logged in. with autologing');
-
-                        }
-                        else
-                        {
-                            delete_cookie("autologin");
-                            $this->session->set_flashdata('user_logged_in', 'You are now logged in. no rememberme');
-                        }
+                        $this->session->set_flashdata('user_logged_in', 'Sie sind jetzt eingeloggt');
 
                         redirect('courses/manage');
 
 
-                    }else{
-                        $this->session->set_flashdata('user_login_failed', 'Login invalid.');
+                    } else {
+                        $this->session->set_flashdata('user_login_failed', 'Login gescheitert. Falsches Passwort oder Name');
 
                         redirect('users/login');
                     }
-            }
 
-            }else{
+                }
+            } else {
                 $this->session->set_flashdata('user_login_failed', 'Already logged in.');
                 redirect('courses/manage');
             }
