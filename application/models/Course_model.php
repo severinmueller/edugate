@@ -45,6 +45,8 @@ class Course_model extends CI_Model
             'title' => $this->input->post('title'),
             'slug' => $slug,
             'body' => $this->input->post('body'),
+            'location' => $this->input->post('location'),
+            'start_date' => $this->input->post('start_date'),
             'category_id' => $this->input->post('category'),
             'user_id' => $this->session->userdata('user_id'),
         );

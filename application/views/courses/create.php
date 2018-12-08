@@ -7,11 +7,19 @@
 
 <?php echo form_open_multipart('courses/create'); ?>
 <div class="form-group">
-    <label>Title</label>
-    <input type="text" class="form-control" name="title" placeholder="Add title...">
+    <label>Kursname</label>
+    <input type="text" class="form-control" name="title" placeholder="Kursname">
 </div>
+        <div class="form-group">
+            <label>Ort</label>
+            <input type="text" class="form-control" name="location" placeholder="Kanton">
+        </div>
+        <div class="form-group">
+            <label>Startdatum (optional)</label>
+            <input type="date" class="form-control" name="start_date">
+        </div>
 <div class="form-group">
-    <label>Body</label>
+    <label>Beschreibung</label>
     <textarea name="body" id="editor"></textarea>
     <script>
 
