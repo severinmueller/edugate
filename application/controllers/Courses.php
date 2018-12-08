@@ -34,7 +34,7 @@ $this->email->initialize(array(
   'newline' => "\r\n"
 ));
 
-
+$this->email->from(getenv("SENDGRID_USERNAME"));
 $this->email->subject('Email Test');
 $this->email->message('Testing the email class.');
 $this->email->send();
