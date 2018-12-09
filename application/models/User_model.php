@@ -46,13 +46,15 @@ public function get_userid($email)
             $data = array(
                 'password' => $enc_password
             );
-            $this->db->where('id',$token_user_id);
-             $this->db->update('users', $data);
 
-             $data2 = array('expired' => TRUE);
-        $this->db->where('id',$token_user_id);
-        $this->db->where('expired',FALSE);
-        $this->db->update('user_tokens', $data2);
+            $data2 = array(
+                'expired' => TRUE
+            );
+
+            $this->db->where('id',$token_user_id);
+            $this->db->update('users', $data);
+            $this->db->update('user_tokens', $data2);
+
         }
 
     public function send_token($email){
