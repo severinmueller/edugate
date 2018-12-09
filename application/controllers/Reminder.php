@@ -2,16 +2,6 @@
 
 class Reminder
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->model('course_model');
-        $this->load->helper('url_helper');
-        $this->load->helper('form');
-        $this->load->library('form_validation');
-        $this->load->helper('text');
-        $this->load->helper('htmlpurifier');
-    }
 
     public function send(){
 
