@@ -106,32 +106,38 @@
             }
         }
 
-        public function reset($token = null){
+        public function reset($token = null)
+        {
             $data['title'] = 'Passwort vergessen';
             $data['token1'] = $token;
-            if(empty($token)) {
+            if (empty($token)) {
                 $this->load->view('templates/header', $data);
                 $this->load->view('users/reset/form', $data);
                 $this->load->view('templates/footer', $data);
-            }else {
+            }else{
+                $this->load->view('templates/header', $data);
+                $this->load->view('users/reset/newpassword', $data);
+                $this->load->view('templates/footer', $data);
+            }
+        }
 
-                $this->form_validation->set_rules('password', 'Passwort bestätigen', 'required');
-                $this->form_validation->set_rules('password2', 'Passwort bestätigen', 'required|matches[password]');
+        public function reset2($token){
+            $data['title'] = 'Passwort vergessen';
 
-                if ($this->form_validation->run() === FALSE) {
-                    $this->load->view('templates/header', $data);
-                    $this->load->view('users/reset/newpassword', $data);
-                    $this->load->view('templates/footer', $data);
-                } else {
+            $this->form_validation->set_rules('password', 'Passwort bestätigen', 'required');
+            $this->form_validation->set_rules('password2', 'Passwort bestätigen', 'required|matches[password]');
 
-                    $password = $this->input->post('password');
-                    $enc_password = password_hash($password, PASSWORD_ARGON2I);
-                    $this->user_model->update($token,$enc_password);
+            if ($this->form_validation->run() === FALSE) {
+                $this->load->view('templates/header', $data);
+                $this->load->view('users/reset/newpassword', $data);
+                $this->load->view('templates/footer', $data);
+            } else {
 
-                    redirect('users/login');
+                $password = $this->input->post('password');
+                $enc_password = password_hash($password, PASSWORD_ARGON2I);
+                $this->user_model->update($token,$enc_password);
 
-                }
-
+                redirect('users/login');
 
             }
         }
