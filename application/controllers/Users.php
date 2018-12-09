@@ -154,6 +154,7 @@
         public function sendtoken(){
             $email = $this->input->post('email');
             $this->user_model->send_token($email);
+            redirect('users/login');
         }
 
     }
