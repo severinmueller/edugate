@@ -38,23 +38,22 @@ public function get_userid($email)
         $this->db->where('user_id', $userpart);
         $this->db->where('purpose', 'reset');
         $this->db->where('token', $tokenpart);
-        $this->db->where('expired', 'false');
+        $this->db->where('expired', FALSE);
         $this->db->where('date', date('Y-m-d'));
         $result = $this->db->get('user_tokens');
 
         $token_user_id = $result->row(0)->user_id;
             $data = array(
-                'password' => $enc_password
+                'password' => $enc_password,
             );
 
-            $data2 = array(
-                'expired' => 'true'
-            );
 
             $this->db->where('id',$token_user_id);
             $this->db->update('users', $data);
-            $this->db->where('id',$token_user_id);
-            $this->db->update('user_tokens', $data2);
+
+            $this->db->where('user_id',$token_user_id);
+            $this->db->set('expired', TRUE);
+            $this->db->update('user_tokens');
 
         }
 
