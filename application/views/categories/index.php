@@ -11,7 +11,7 @@
 									<span class="image">
 										<img src="<?php echo base_url('assets/images/pic05.jpg')?>" alt="" />
 									</span>
-                <a href="<?php echo site_url('/categories/courses/'); ?>">
+                <a href="<?php echo site_url('/courses/'); ?>">
                     <h2>Alle</h2>
                     <div class="content">
                         <p></p>
