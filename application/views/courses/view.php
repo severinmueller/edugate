@@ -1,6 +1,6 @@
 <div id="main">
     <div class="inner">
-
+        <hr>
 <h2><?php echo $course['title']; ?></h2>
 
         <ul class="alt">
