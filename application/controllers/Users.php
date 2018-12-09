@@ -114,10 +114,15 @@
                 $this->load->view('templates/footer', $data);
             }else {
                 $tokenarray = explode('/', $token);
-                $data['token1'] = $tokenarray[0];
+                $token1 = $tokenarray[0];
+                $token2 = $tokenarray[1];
+                $data['token1'] = $token1;
+                $data['token2'] = $token2;
+
                 $this->load->view('templates/header', $data);
                 $this->load->view('users/reset/newpassword', $data);
                 $this->load->view('templates/footer', $data);
+                $this->load->user_model->reset_password($token1, $token2);
             }
         }
 
