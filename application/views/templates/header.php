@@ -86,5 +86,6 @@
     <?php if($this->session->flashdata('reset_email_sent')): ?>
         <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('reset_email_sent').'</p>'; ?>
     <?php endif; ?>
+
 </div>
 

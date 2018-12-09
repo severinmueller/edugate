@@ -83,6 +83,16 @@ public function get_userid($email)
         $this->email->message('Dein Link zum Passwort-Reset: '.$link);
         $this->email->send();
 
+        $data = array(
+            'user_id' => $userid,
+            'token' => $token,
+            'purpose' => 'reset',
+            'expired' => FALSE,
+            'date' => date('Y-m-d')
+        );
+
+        $this->db->insert('user_tokens', $data);
+
     }
 
 }
