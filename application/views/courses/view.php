@@ -4,9 +4,10 @@
 <h2><?php echo $course['title']; ?></h2>
 
         <ul class="alt">
-            <li>Anbieter: <?php echo $course['name']; ?></li>
-            <li>Ort: <?php echo $course['location']; ?></li>
-            <?php if (!empty($course['start_date'])): ?><li>Startdatum: <?php echo $course['start_date']; ?></li> <?php endif; ?>
+            <li><b>Anbieter:</b> <?php echo $course['name']; ?></li>
+            <li><b>Ort:</b> <?php echo $course['location']; ?></li>
+            <?php if (!empty($course['start_date'])): ?><li><b>Startdatum:</b> <?php echo $course['start_date']; ?></li> <?php endif; ?>
+            <li><b>Beschreibung:</b></li>
         </ul>
         <br>
 <div class=post-body">
@@ -15,6 +16,5 @@
 </div>
 
 <hr>
-
     </div>
 </div>
