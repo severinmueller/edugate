@@ -115,10 +115,6 @@
                 $this->load->view('templates/footer', $data);
             }else {
 
-                $this->load->view('templates/header', $data);
-                $this->load->view('users/reset/newpassword', $data);
-                $this->load->view('templates/footer', $data);
-
                 if ($this->form_validation->run() === FALSE) {
                     $this->load->view('templates/header', $data);
                     $this->load->view('users/reset/newpassword', $data);
