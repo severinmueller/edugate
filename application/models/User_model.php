@@ -14,7 +14,6 @@ class User_model extends CI_Model {
             'password' => $enc_password,
         );
         return $this->db->insert('users', $data);
-
 }
 
     public function get_hash($email)
@@ -30,8 +29,16 @@ public function get_userid($email)
     $result = $this->db->get('users');
     return $result->row(0)->id;
 
-
-
 }
+
+    public function update($token, $enc_password){
+
+        $data = array(
+            'password' => $enc_password,
+        );
+        //return $this->db->update('users', $data);
+        return true;
+    }
+
 
 }

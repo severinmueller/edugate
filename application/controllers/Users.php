@@ -108,19 +108,34 @@
 
         public function reset($token = null){
             $data['title'] = 'Passwort vergessen';
+            $data['token1'] = $token;
             if(empty($token)) {
                 $this->load->view('templates/header', $data);
                 $this->load->view('users/reset/form', $data);
                 $this->load->view('templates/footer', $data);
             }else {
 
-
-                $data['token1'] = $token;
-
                 $this->load->view('templates/header', $data);
                 $this->load->view('users/reset/newpassword', $data);
                 $this->load->view('templates/footer', $data);
-                //$this->load->user_model->reset_password($token1, $token2);
+
+                if ($this->form_validation->run() === FALSE) {
+                    $this->load->view('templates/header', $data);
+                    $this->load->view('users/reset/newpassword', $data);
+                    $this->load->view('templates/footer', $data);
+                } else {
+
+                    $password = $this->input->post('password');
+                    $enc_password = password_hash($password, PASSWORD_ARGON2I);
+                    $this->load->user_model->update($token,$enc_password);
+
+                    $this->session->set_flashdata('user_registered', 'You are now registered.');
+
+                    redirect('users/login');
+
+                }
+
+
             }
         }
 
