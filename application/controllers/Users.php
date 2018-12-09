@@ -154,6 +154,8 @@
         public function sendtoken(){
             $email = $this->input->post('email');
             $this->user_model->send_token($email);
+            $this->session->set_flashdata('reset_email_sent', 'Dein Link zum Zurücksetzen des Passworts wurde gesendet (bitte Spam-Ordner überprüfen).');
+
             redirect('users/login');
         }
 

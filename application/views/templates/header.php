@@ -83,5 +83,8 @@
     <?php if($this->session->flashdata('user_logged_out')): ?>
         <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('user_logged_out').'</p>'; ?>
     <?php endif; ?>
+    <?php if($this->session->flashdata('reset_email_sent')): ?>
+        <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('reset_email_sent').'</p>'; ?>
+    <?php endif; ?>
 </div>
 
