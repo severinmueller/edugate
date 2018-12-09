@@ -17,6 +17,11 @@ class Reminder extends CI_Controller
 
         public function send(){
 
+            $this->db->join('users', 'users.id = courses.user_id');
+            $this->db->select('email');
+            $emails = $this->db->get_where('courses', array('start_date' => date('Y-m-d')));
+
+
         $this->load->library('email');
 
         $this->email->initialize(array(
@@ -29,10 +34,10 @@ class Reminder extends CI_Controller
             'newline' => "\r\n"
         ));
 
-        $this->email->from('edugate@sendgrid.me');
-        $this->email->to('severin.mueller@students.fhnw.ch');
-        $this->email->subject('Email Test');
-        $this->email->message('Testing the email class.');
+        $this->email->from('reminder@edugate.ch');
+        $this->email->bcc($emails);
+        $this->email->subject('Erinnerung - Startdatum Kurs');
+        $this->email->message('Guten Tag, das Startdatum einer ihrer Kurse ist abgelaufen. Bitte überprüfen Sie den entsprechenden Kurs auf https://edugate-ch.herokuapp.com/courses/manage');
         $this->email->send();
 
     }
