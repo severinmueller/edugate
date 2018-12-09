@@ -2,11 +2,14 @@
     <div class="inner">
 
 <h2><?php echo $course['title']; ?></h2>
-<h3>Anbieter: <?php echo $course['name']; ?></h3>
-<h3>Ort: <?php echo $course['location']; ?></h3>
-<?php if (!empty($course['start_date'])): ?><h3>Startdatum: <?php echo $course['start_date']; ?></h3> <?php endif; ?>
 
-
+        <h3>Alternate</h3>
+        <ul class="alt">
+            <li>Anbieter: <?php echo $course['name']; ?></li>
+            <li>Ort: <?php echo $course['location']; ?></li>
+            <?php if (!empty($course['start_date'])): ?><li>Startdatum: <?php echo $course['start_date']; ?></li> <?php endif; ?>
+        </ul>
+        <br>
 <div class=post-body">
     <?php  $clean_body = html_purify($course['body']); echo $clean_body; ?>
 
