@@ -39,7 +39,7 @@ class Reminder extends CI_Controller
                 $this->email->from('reminder@edugate.ch');
                 $this->email->bcc($row['email']);
                 $this->email->subject('Erinnerung - Startdatum Kurs');
-                $this->email->message('Guten Tag, das Startdatum ihres Kurses '.$row['slug'].' ist abgelaufen. Bitte überprüfen Sie den entsprechenden Kurs auf https://edugate-ch.herokuapp.com/courses/manage');
+                $this->email->message('Guten Tag, das Startdatum ihres Kurses '.$row['title'].' ist abgelaufen. Bitte überprüfen Sie den entsprechenden Kurs auf https://edugate-ch.herokuapp.com/courses/manage');
                 $this->email->send();
 }
     }
