@@ -1,6 +1,6 @@
 <?php
 
-class Reminder extends CI_Controller
+class Reminder
 {
     public function __construct()
     {
