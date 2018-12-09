@@ -38,7 +38,7 @@ public function get_userid($email)
         $this->db->where('user_id', $userpart);
         $this->db->where('purpose', 'reset');
         $this->db->where('token', $tokenpart);
-        $this->db->where('expired', FALSE);
+        $this->db->where('expired', 'false');
         $this->db->where('date', date('Y-m-d'));
         $result = $this->db->get('user_tokens');
 
@@ -48,7 +48,7 @@ public function get_userid($email)
             );
 
             $data2 = array(
-                'expired' => TRUE
+                'expired' => 'true'
             );
 
             $this->db->where('id',$token_user_id);
