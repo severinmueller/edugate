@@ -111,7 +111,8 @@
             $data['title'] = 'Passwort vergessen';
             $data['token1'] = $token;
             if(empty($token)) {
-                $data['time'] = time();
+                $date = date_default_timezone_get();
+                $data['time'] = date($date,Y-m-d);
                 $this->load->view('templates/header', $data);
                 $this->load->view('users/reset/form', $data);
                 $this->load->view('templates/footer', $data);
