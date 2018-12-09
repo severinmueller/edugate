@@ -3,7 +3,7 @@
                 <input type="text" name="email" class="form-control" placeholder="E-Mail-Adresse" required autofocus>
                 <input type="password" name="password" class="form-control" placeholder="Passwort" required autofocus>
         <br>
-            <button type="submit">Login</button>
+            <button type="submit">Login</button> <a href="<?php echo site_url('/users/reset'); ?>">Passwort vergessen?</a>
         <?php echo form_close(); ?>
 
     </div>

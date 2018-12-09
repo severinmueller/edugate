@@ -7,6 +7,7 @@
     <label>Passwort bestätigen</label>
     <input type="password" class="form-control" name="password2" placeholder="Passwort bestätigen">
 </div>
+        <br>
 <button type="submit" class="button">Passwort zurücksetzen</button>
         <?php echo form_close(); ?>
 
