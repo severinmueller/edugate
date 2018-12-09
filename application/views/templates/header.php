@@ -41,62 +41,24 @@
     <nav id="menu">
         <h2>Menu</h2>
         <ul>
-            <li><a href="<?php echo base_url();?>">Home</a></li>
-            <li><a href="<?php echo base_url();?>users/login">Login</a></li>
-            <li><a href="<?php echo base_url();?>users/register">Register</a></li>
-            <li><a href="<?php echo base_url();?>users/logout">Logout</a></li>
-            <li><a href="<?php echo base_url();?>courses/create">Create course</a></li>
+            <li><a href="<?php echo base_url();?>">Kategorien</a></li>
+            <li><a href="<?php echo base_url();?>courses">Alle Kurse</a></li>
+            <li><a href="<?php echo base_url();?>users/login">Anmelden</a></li>
+            <li><a href="<?php echo base_url();?>users/register">Registrieren</a></li>
+
+            <?php if($this->session->userdata('logged_in')) : ?>
+                <li><a href="<?php echo base_url();?>courses/create">Kurs erstellen</a></li>
+                <li><a href="<?php echo base_url();?>courses/manage">Kurse verwalten</a></li>
+                <li><a href="<?php echo base_url();?>users/logout">Abmelden</a></li>
+            <?php endif; ?>
+
         </ul>
     </nav>
 
+    <div id="main">
+        <div class="inner">
 
-<!--
-    <div class="collapse navbar-collapse" id="navbarSuspportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item <?php if($this->uri->uri_string() == '') { echo 'active'; }?> py-1" >
-                <a class="nav-link py-1" href="<?php echo base_url();?>">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item <?php if($this->uri->uri_string() == 'about') { echo 'active'; }?> py-1">
-                <a class="nav-link py-1" href="<?php echo base_url();?>about">About </a>
-            </li>
-            <li class="nav-item <?php if($this->uri->uri_string() == 'courses') { echo 'active'; }?> py-1">
-                <a class="nav-link py-1" href="<?php echo base_url();?>courses">courses </a>
-            </li>
-            <li class="nav-item <?php if($this->uri->uri_string() == 'categories') { echo 'active'; }?> py-1">
-                <a class="nav-link py-1" href="<?php echo base_url();?>categories">Categories </a>
-            </li>
-            <?php if(!$this->session->userdata('logged_in')) : ?>
-            <li class="nav-item <?php if($this->uri->uri_string() == 'users/register') { echo 'active'; }?> py-1">
-                <a class="nav-link py-1" href="<?php echo base_url();?>users/register">Register </a>
-            </li>
-            <li class="nav-item <?php if($this->uri->uri_string() == 'users/login') { echo 'active'; }?> py-1">
-                <a class="nav-link py-1" href="<?php echo base_url();?>users/login">Login </a>
-            </li>
-            <?php endif; ?>
-
-            <?php if($this->session->userdata('logged_in')) : ?>
-            <li class="nav-item <?php if($this->uri->uri_string() == 'users/logout') { echo 'active'; }?> py-1">
-                <a class="nav-link py-1" href="<?php echo base_url();?>users/logout">Logout </a>
-            </li>
-            <?php endif; ?>
-        </ul>
-
-        <?php if($this->session->userdata('logged_in')) : ?>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item <?php if($this->uri->uri_string() == 'courses/create') { echo 'active'; }?> py-1">
-                <a class="nav-link py-1" href="<?php echo base_url();?>courses/create">Create course </a>
-            </li>
-            <li class="nav-item <?php if($this->uri->uri_string() == 'categories/create') { echo 'active'; }?> py-1">
-                <a class="nav-link py-1" href="<?php echo base_url();?>categories/create">Create category </a>
-            </li>
-        </ul>
-        <?php endif; ?>
-
-    </div>
-</nav>
--->
-
-<div class="container">
+        <div class="container">
     <?php if($this->session->flashdata('user_registered')): ?>
         <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('user_registered').'</p>'; ?>
     <?php endif; ?>

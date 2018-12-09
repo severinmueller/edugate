@@ -1,5 +1,3 @@
-<div id="main">
-    <div class="inner">
         <header>
             <h1>Dein Portal zur Weiterbildung.</h1>
             <p>Entdecke jetzt das vielfältige Angebot an Weiterbildungskursen von Fachhoschulen in der ganzen Schweiz. Wähle die Kategorie, für die Du dich interessierts:</p>

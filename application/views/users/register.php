@@ -1,9 +1,4 @@
-
-
-
-<div id="main">
-    <div class="inner">
-        <?php echo validation_errors(); ?>
+    <?php echo validation_errors(); ?>
     <?php echo form_open('users/register'); ?>
 
 <div class="form-group">

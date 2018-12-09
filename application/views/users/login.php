@@ -1,6 +1,3 @@
-
-<div id="main">
-    <div class="inner">
         <?php echo form_open('users/login'); ?>
             <h1 class="text-center"><?php echo $title; ?></h1>
                 <input type="text" name="email" class="form-control" placeholder="E-Mail-Adresse" required autofocus>

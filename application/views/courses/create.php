@@ -1,7 +1,4 @@
-<div id="main">
-    <div class="inner">
-
-        <h2><?php echo $title ?></h2>
+ <h2><?php echo $title ?></h2>
 
 <?php echo validation_errors(); ?>
 

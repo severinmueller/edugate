@@ -1,6 +1,3 @@
-<div id="main">
-    <div class="inner">
-
 <h2><?php $title ?></h2>
 
 <?php echo validation_errors(); ?>

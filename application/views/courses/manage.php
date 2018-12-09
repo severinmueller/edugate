@@ -1,6 +1,3 @@
-<div id="main">
-    <div class="inner">
-
         <h2>Meine Kurse</h2>
         <div class="table-wrapper">
             <table>
