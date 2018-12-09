@@ -9,10 +9,8 @@
             <?php if (!empty($course['start_date'])): ?><li><b>Startdatum:</b> <?php echo $course['start_date']; ?></li> <?php endif; ?>
             <li><b>Beschreibung:</b></li>
         </ul>
-        <br>
 <div class=post-body">
     <?php  $clean_body = html_purify($course['body']); echo $clean_body; ?>
-
 </div>
 
 <hr>

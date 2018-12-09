@@ -24,7 +24,7 @@
 
             <!-- Logo -->
             <a href="<?php echo base_url();?>" class="logo">
-                <img src="<?php echo base_url('assets/images/edugate-schrift.png'); ?>" alt="logo" height="150" />
+                <img src="<?php echo base_url('assets/images/edugate-schrift.png'); ?>" alt="logo" height="125" />
             </a>
 
             <!-- Nav -->
