@@ -1,7 +1,7 @@
 <?php
 echo "newpassword";
 echo $token1;
-
+?>
         <?php echo form_open('users/login'); ?>
    <div class="form-group">
     <label>Neues Passwort</label>
