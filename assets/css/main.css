@@ -2382,6 +2382,15 @@ input, select, textarea {
 			text-align: left;
 		}
 
+		table th:hover {
+			font-size: 0.9em;
+			font-weight: 900;
+			padding: 0 0.75em 0.75em 0.75em;
+			text-align: left;
+			color: #39AC82 !important;
+		}
+
+
 		table thead {
 			border-bottom: solid 2px #c9c9c9;
 		}
