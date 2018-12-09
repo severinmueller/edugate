@@ -3,10 +3,10 @@
     <table id="myTable">
         <thead>
         <tr>
-            <th onclick="sortTable(0)">>Kurs</th>
-            <th onclick="sortTable(1)">>Ort</th>
-            <th onclick="sortTable(2)">>Anbieter</th>
-            <th onclick="sortTable(3)">>Startdatum</th>
+            <th onclick="sortTable(0)">Kurs</th>
+            <th onclick="sortTable(1)">Ort</th>
+            <th onclick="sortTable(2)">Anbieter</th>
+            <th onclick="sortTable(3)">Startdatum</th>
         </tr>
         </thead>
         <tbody>
