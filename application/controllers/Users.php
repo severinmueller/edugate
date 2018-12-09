@@ -114,8 +114,8 @@
                 $this->load->view('templates/footer', $data);
             }else {
                 $tokenarray = explode('/', $token);}
-                $data['token1'] = $tokenarray[1];
-                $data['token2'] = $tokenarray[2];
+                $data['token1'] = $tokenarray[0];
+                $data['token2'] = $tokenarray[1];
                 $this->load->view('templates/header', $data);
                 $this->load->view('users/reset/newpassword', $data);
                 $this->load->view('templates/footer', $data);
