@@ -120,7 +120,7 @@
                 $this->load->view('templates/header', $data);
                 $this->load->view('users/reset/newpassword', $data);
                 $this->load->view('templates/footer', $data);
-                $this->load->user_model->reset_password($token1, $token2);
+                //$this->load->user_model->reset_password($token1, $token2);
             }
         }
 
