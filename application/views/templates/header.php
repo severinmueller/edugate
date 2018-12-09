@@ -43,9 +43,10 @@
         <ul>
             <li><a href="<?php echo base_url();?>">Kategorien</a></li>
             <li><a href="<?php echo base_url();?>courses">Alle Kurse</a></li>
+            <?php if(!($this->session->userdata('logged_in'))) : ?>
             <li><a href="<?php echo base_url();?>users/login">Anmelden</a></li>
             <li><a href="<?php echo base_url();?>users/register">Registrieren</a></li>
-
+            <?php endif; ?>
             <?php if($this->session->userdata('logged_in')) : ?>
                 <li><a href="<?php echo base_url();?>courses/create">Kurs erstellen</a></li>
                 <li><a href="<?php echo base_url();?>courses/manage">Kurse verwalten</a></li>
