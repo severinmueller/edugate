@@ -20,7 +20,6 @@
             $this->form_validation->set_rules('name', 'Organisation', 'required|is_unique[users.name]', array('is_unique' => 'This %s already exists.'));
             $this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]|valid_email', array('is_unique' => 'This %s already exists.'));
             $this->form_validation->set_rules('password', 'Password', 'required');
-            $this->form_validation->set_rules('password', 'Password', 'required');
             $this->form_validation->set_rules('password2', 'Confirm password', 'required|matches[password]');
 
 
@@ -115,6 +114,9 @@
                 $this->load->view('users/reset/form', $data);
                 $this->load->view('templates/footer', $data);
             }else {
+
+                $this->form_validation->set_rules('password', 'Passwort bestätigen', 'required');
+                $this->form_validation->set_rules('password2', 'Passwort bestätigen', 'required|matches[password]');
 
                 if ($this->form_validation->run() === FALSE) {
                     $this->load->view('templates/header', $data);
