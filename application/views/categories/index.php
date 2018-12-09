@@ -18,10 +18,10 @@
             </article>
             <?php $style = 1; ?>
     <?php foreach ($categories as $category) : ?>
-    <?php if($style<11){
+    <?php if($style<6){
         $style++;
     }else {
-            $style = 0;
+            $style = 1;
         }
     ?>
             <article class="<?php echo "style".$style ?>">
