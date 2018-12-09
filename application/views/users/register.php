@@ -19,7 +19,7 @@
 </div>
 <button type="submit" class="button">Submit</button>
 
-<php echo form_close(); ?>
+<?php echo form_close(); ?>
     </div>
 
 
