@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 -->
 <html>
 <head>
-    <title><?php echo $title; ?></title>
+    <title>Fehler</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <script src="//cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
@@ -40,56 +40,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </header>
 
     <!-- Menu -->
-    <nav id="menu">
-        <h2>Menu</h2>
-        <ul>
-            <li><a href="<?php echo base_url();?>">Kategorien</a></li>
-            <li><a href="<?php echo base_url();?>courses">Alle Kurse</a></li>
-            <?php if(!($this->session->userdata('logged_in'))) : ?>
-                <li><a href="<?php echo base_url();?>users/login">Anmelden</a></li>
-                <li><a href="<?php echo base_url();?>users/register">Registrieren</a></li>
-            <?php endif; ?>
-            <?php if($this->session->userdata('logged_in')) : ?>
-                <li><a href="<?php echo base_url();?>courses/create">Kurs erstellen</a></li>
-                <li><a href="<?php echo base_url();?>courses/manage">Kurse verwalten</a></li>
-                <li><a href="<?php echo base_url();?>users/logout">Abmelden</a></li>
-            <?php endif; ?>
 
-        </ul>
-    </nav>
 
     <div id="main">
         <div class="inner">
 
-            <div class="container">
-                <?php if($this->session->flashdata('user_registered')): ?>
-                    <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('user_registered').'</p>'; ?>
-                <?php endif; ?>
 
-                <?php if($this->session->flashdata('course_created')): ?>
-                    <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('course_created').'</p>'; ?>
-                <?php endif; ?>
-
-                <?php if($this->session->flashdata('course_updated')): ?>
-                    <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('course_updated').'</p>'; ?>
-                <?php endif; ?>
-
-                <?php if($this->session->flashdata('user_logged_in')): ?>
-                    <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('user_logged_in').'</p>'; ?>
-                <?php endif; ?>
-
-                <?php if($this->session->flashdata('user_login_failed')): ?>
-                    <?php echo '<p class="alert alert-alarm" role="alert">'.$this->session->flashdata('user_login_failed').'</p>'; ?>
-                <?php endif; ?>
-
-                <?php if($this->session->flashdata('user_logged_out')): ?>
-                    <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('user_logged_out').'</p>'; ?>
-                <?php endif; ?>
-                <?php if($this->session->flashdata('reset_email_sent')): ?>
-                    <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('reset_email_sent').'</p>'; ?>
-                <?php endif; ?>
-
-            </div>
             <br>
 <h1>Die gewünschte Seite konnte nicht gefunden werden oder existiert nicht mehr.</h1>
             <br>
@@ -107,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </ul>
                     </section>
                     <ul class="copyright">
-                        <li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        <li>&copy; edugate. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
                     </ul>
                 </div>
             </footer>
@@ -115,11 +71,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 
         <!-- Scripts -->
-        <script src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
-        <script src="<?php echo base_url('assets/js/browser.min.js');?>"></script>
-        <script src="<?php echo base_url('assets/js/breakpoints.min.js');?>"></script>
-        <script src="<?php echo base_url('assets/js/util.js');?>"></script>
-        <script src="<?php echo base_url('assets/js/main.js');?>"></script>
 
 </body>
 </html>
