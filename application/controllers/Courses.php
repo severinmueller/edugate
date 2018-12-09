@@ -92,7 +92,7 @@ $this->email->send();
 
                 $this->session->set_flashdata('course_created', 'Your course has been created.');
 
-                redirect('courses');
+                redirect('courses/manage');
             }
         }else{
             redirect('users/login');
@@ -106,7 +106,7 @@ $this->email->send();
         if($this->session->userdata('logged_in') && ($this->session->userdata('user_id') == $this->course_model->get_course_userid($id))) {
 
             $this->course_model->delete_course($id);
-            redirect('courses');
+            redirect('courses/manage');
         }else{
             redirect('users/login');
         }
@@ -143,7 +143,7 @@ $this->email->send();
 
             $this->course_model->update_course($id);
             $this->session->set_flashdata('course_updated', 'Your course has been updated.');
-            redirect('courses');
+            redirect('courses/manage');
 
         }else{
             redirect('users/login');
