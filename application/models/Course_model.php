@@ -23,6 +23,7 @@ class Course_model extends CI_Model
             return $query->result_array();
         }
 
+        $this->db->join('users', 'users.id = courses.user_id');
         $query = $this->db->get_where('courses', array('slug' => $slug));
         return $query->row_array();
 
