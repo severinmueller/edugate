@@ -12,6 +12,7 @@ class Reminder extends CI_Controller
         $this->load->library('form_validation');
         $this->load->helper('text');
         $this->load->helper('htmlpurifier');
+        $this->load->database();
 
     }
 
