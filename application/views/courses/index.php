@@ -3,19 +3,19 @@
     <table id="myTable">
         <thead>
         <tr>
-            <th>Kurs</th>
-            <th>Ort</th>
-            <th>Anbieter</th>
-            <th>Startdatum</th>
+            <th onclick="sortTable(0)">>Kurs</th>
+            <th onclick="sortTable(1)">>Ort</th>
+            <th onclick="sortTable(2)">>Anbieter</th>
+            <th onclick="sortTable(3)">>Startdatum</th>
         </tr>
         </thead>
         <tbody>
         <?php foreach($courses as $course) : ?>
         <tr>
-            <td onclick="sortTable(0)"><a href="<?php echo site_url('/courses/'.$course['slug']); ?>"><?php echo $course['title']; ?></a></td>
-            <td onclick="sortTable(1)"><?php echo $course['location']; ?></td>
-            <td onclick="sortTable(2)"><?php echo $course['name']; ?></td>
-            <td onclick="sortTable(3)"><?php echo $course['start_date']; ?></td>
+            <td><a href="<?php echo site_url('/courses/'.$course['slug']); ?>"><?php echo $course['title']; ?></a></td>
+            <td><?php echo $course['location']; ?></td>
+            <td><?php echo $course['name']; ?></td>
+            <td><?php echo $course['start_date']; ?></td>
         </tr>
         <?php endforeach; ?>
     </table>
