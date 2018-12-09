@@ -24,7 +24,7 @@
 
 
         if($this->form_validation->run() === FALSE){
-            $data['title'] = 'Sign up';
+            $data['title'] = 'Registrieren';
             $this->load->view('templates/header', $data);
             $this->load->view('users/register', $data);
             $this->load->view('templates/footer',$data);
@@ -105,6 +105,24 @@
                 redirect('');
             }
         }
+
+        public function reset($token = null){
+            $data['title'] = 'Passwort vergessen';
+            if (empty($token)) {
+                $this->load->view('templates/header', $data);
+                $this->load->view('users/reset', $data);
+                $this->load->view('templates/footer', $data);
+            }else {
+                explode('/', $token);}
+                $this->load->view('templates/header', $data);
+                $this->load->view('users/reset/newpassword', $data);
+                $this->load->view('templates/footer', $data);
+        }
+
+        public function activate($token = null){
+
+        }
+
     }
 
 
