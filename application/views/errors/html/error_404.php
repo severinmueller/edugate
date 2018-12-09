@@ -1,64 +1,125 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
+?><!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
 <head>
-<meta charset="utf-8">
-<title>404 Page Not Found</title>
-<style type="text/css">
-
-::selection { background-color: #E13300; color: white; }
-::-moz-selection { background-color: #E13300; color: white; }
-
-body {
-	background-color: #fff;
-	margin: 40px;
-	font: 13px/20px normal Helvetica, Arial, sans-serif;
-	color: #4F5155;
-}
-
-a {
-	color: #003399;
-	background-color: transparent;
-	font-weight: normal;
-}
-
-h1 {
-	color: #444;
-	background-color: transparent;
-	border-bottom: 1px solid #D0D0D0;
-	font-size: 19px;
-	font-weight: normal;
-	margin: 0 0 14px 0;
-	padding: 14px 15px 10px 15px;
-}
-
-code {
-	font-family: Consolas, Monaco, Courier New, Courier, monospace;
-	font-size: 12px;
-	background-color: #f9f9f9;
-	border: 1px solid #D0D0D0;
-	color: #002166;
-	display: block;
-	margin: 14px 0 14px 0;
-	padding: 12px 10px 12px 10px;
-}
-
-#container {
-	margin: 10px;
-	border: 1px solid #D0D0D0;
-	box-shadow: 0 0 8px #D0D0D0;
-}
-
-p {
-	margin: 12px 15px 12px 15px;
-}
-</style>
+    <title><?php echo $title; ?></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <script src="//cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/main.css");?>">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="icon" type="image/png" href="<?php echo base_url('assets/images/favicon-32x32.png');?>"/>
 </head>
-<body>
-	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
-	</div>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+            <a href="<?php echo base_url();?>" class="logo">
+                <img src="<?php echo base_url('assets/images/edugate-schrift.png'); ?>" alt="logo" height="125" />
+            </a>
+
+            <!-- Nav -->
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Menu -->
+    <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="<?php echo base_url();?>">Kategorien</a></li>
+            <li><a href="<?php echo base_url();?>courses">Alle Kurse</a></li>
+            <?php if(!($this->session->userdata('logged_in'))) : ?>
+                <li><a href="<?php echo base_url();?>users/login">Anmelden</a></li>
+                <li><a href="<?php echo base_url();?>users/register">Registrieren</a></li>
+            <?php endif; ?>
+            <?php if($this->session->userdata('logged_in')) : ?>
+                <li><a href="<?php echo base_url();?>courses/create">Kurs erstellen</a></li>
+                <li><a href="<?php echo base_url();?>courses/manage">Kurse verwalten</a></li>
+                <li><a href="<?php echo base_url();?>users/logout">Abmelden</a></li>
+            <?php endif; ?>
+
+        </ul>
+    </nav>
+
+    <div id="main">
+        <div class="inner">
+
+            <div class="container">
+                <?php if($this->session->flashdata('user_registered')): ?>
+                    <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('user_registered').'</p>'; ?>
+                <?php endif; ?>
+
+                <?php if($this->session->flashdata('course_created')): ?>
+                    <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('course_created').'</p>'; ?>
+                <?php endif; ?>
+
+                <?php if($this->session->flashdata('course_updated')): ?>
+                    <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('course_updated').'</p>'; ?>
+                <?php endif; ?>
+
+                <?php if($this->session->flashdata('user_logged_in')): ?>
+                    <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('user_logged_in').'</p>'; ?>
+                <?php endif; ?>
+
+                <?php if($this->session->flashdata('user_login_failed')): ?>
+                    <?php echo '<p class="alert alert-alarm" role="alert">'.$this->session->flashdata('user_login_failed').'</p>'; ?>
+                <?php endif; ?>
+
+                <?php if($this->session->flashdata('user_logged_out')): ?>
+                    <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('user_logged_out').'</p>'; ?>
+                <?php endif; ?>
+                <?php if($this->session->flashdata('reset_email_sent')): ?>
+                    <?php echo '<p class="alert alert-success" role="alert">'.$this->session->flashdata('reset_email_sent').'</p>'; ?>
+                <?php endif; ?>
+
+            </div>
+            <br>
+<h1>Die gewünschte Seite konnte nicht gefunden werden oder existiert nicht mehr.</h1>
+            <br>
+            <!-- Footer -->
+            <footer id="footer">
+                <div class="inner">
+                    <section>
+                        <h2>Follow</h2>
+                        <ul class="icons">
+                            <li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                            <li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+                            <li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                            <li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
+                            <li><a href="webmaster@edugate-ch.herokuapp.com" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+                        </ul>
+                    </section>
+                    <ul class="copyright">
+                        <li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                    </ul>
+                </div>
+            </footer>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
+        <script src="<?php echo base_url('assets/js/browser.min.js');?>"></script>
+        <script src="<?php echo base_url('assets/js/breakpoints.min.js');?>"></script>
+        <script src="<?php echo base_url('assets/js/util.js');?>"></script>
+        <script src="<?php echo base_url('assets/js/main.js');?>"></script>
+
 </body>
 </html>
