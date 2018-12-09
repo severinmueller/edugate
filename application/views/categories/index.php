@@ -7,9 +7,7 @@
 
 
         <section class="tiles">
-
-
-            <article class="style0">">
+            <article class="style0">
 									<span class="image">
 										<img src="<?php echo base_url('assets/images/pic05.jpg')?>" alt="" />
 									</span>
