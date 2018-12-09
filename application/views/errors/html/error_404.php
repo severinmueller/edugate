@@ -29,13 +29,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <img src="<?php echo base_url('assets/images/edugate-schrift.png'); ?>" alt="logo" height="125" />
             </a>
 
-            <!-- Nav -->
-            <nav>
-                <ul>
-                    <li><a href="#menu">Menu</a></li>
-                </ul>
-            </nav>
-
         </div>
     </header>
 
@@ -49,28 +42,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <br>
 <h1>Die gewünschte Seite konnte nicht gefunden werden oder existiert nicht mehr.</h1>
             <br>
-            <!-- Footer -->
-            <footer id="footer">
-                <div class="inner">
-                    <section>
-                        <h2>Follow</h2>
-                        <ul class="icons">
-                            <li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-                            <li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-                            <li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-                            <li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
-                            <li><a href="webmaster@edugate-ch.herokuapp.com" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
-                        </ul>
-                    </section>
-                    <ul class="copyright">
-                        <li>&copy; edugate. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                    </ul>
-                </div>
-            </footer>
 
         </div>
 
-        <!-- Scripts -->
 
 </body>
 </html>
