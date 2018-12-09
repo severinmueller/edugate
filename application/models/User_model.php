@@ -36,9 +36,10 @@ public function get_userid($email)
         $userpart = $tokenexploded[0];
         $tokenpart = $tokenexploded[1];
         $this->db->where('user_id', $userpart);
-        $this->db->where('purpose', reset);
+        $this->db->where('purpose', 'reset');
         $this->db->where('token', $tokenpart);
         $this->db->where('expired', FALSE);
+        $this->db->where('date', date('Y-m-d'));
         $result = $this->db->get('user_tokens');
 
         if(!(empty($result))){

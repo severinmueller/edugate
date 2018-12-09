@@ -1,3 +1,21 @@
 <?php
 echo "newpassword";
 echo $token1;
+
+        <?php echo form_open('users/login'); ?>
+   <div class="form-group">
+    <label>Neues Passwort</label>
+    <input type="password" class="form-control" name="password" placeholder="Passwort">
+</div>
+<div class="form-group">
+    <label>Passwort bestätigen</label>
+    <input type="password" class="form-control" name="password2" placeholder="Passwort bestätigen">
+</div>
+<button type="submit" class="button">Passwort zurücksetzen</button>
+        <?php echo form_close(); ?>
+
+    </div>
+
+
+</div>
+
