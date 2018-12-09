@@ -53,6 +53,7 @@ public function get_userid($email)
 
             $this->db->where('id',$token_user_id);
             $this->db->update('users', $data);
+            $this->db->where('id',$token_user_id);
             $this->db->update('user_tokens', $data2);
 
         }
