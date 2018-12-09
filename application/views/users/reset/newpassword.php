@@ -2,7 +2,7 @@
 echo "newpassword";
 echo $token1;
 ?>
-        <?php echo form_open('users/login'); ?>
+        <?php echo form_open('users/reset'); ?>
    <div class="form-group">
     <label>Neues Passwort</label>
     <input type="password" class="form-control" name="password" placeholder="Passwort">
