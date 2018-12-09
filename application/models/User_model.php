@@ -42,14 +42,12 @@ public function get_userid($email)
         $this->db->where('date', date('Y-m-d'));
         $result = $this->db->get('user_tokens');
 
-        if(!(empty($result))){
+        $token_user_id = $result->row(0)->user_id;
             $data = array(
                 'password' => $enc_password,
             );
-            $this->db->where('id',$userpart);
+            $this->db->where('id',$token_user_id);
             return $this->db->update('users', $data);
         }
-    }
-
 
 }
