@@ -20,7 +20,7 @@ class Reminder extends CI_Controller
 
             $this->db->join('users', 'users.id = courses.user_id');
             $this->db->select('email');
-            $this->db->select('slug');
+            $this->db->select('title');
             $query = $this->db->get_where('courses', array('start_date' => date('Y-m-d')));
             $result = $query->result_array();
 
