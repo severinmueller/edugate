@@ -12,5 +12,7 @@
 </div>
 
 <hr>
+
+        <a class="button" href="javascript:history.go(-1)">Zurück</a>
     </div>
 </div>
