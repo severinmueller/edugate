@@ -110,12 +110,11 @@
             $data['title'] = 'Passwort vergessen';
             if (empty($token)) {
                 $this->load->view('templates/header', $data);
-                $this->load->view('users/reset', $data);
+                $this->load->view('users/reset/form', $data);
                 $this->load->view('templates/footer', $data);
             }else {
                 $tokenarray = explode('/', $token);}
                 $data['token1'] = $tokenarray[0];
-                $data['token2'] = $tokenarray[1];
                 $this->load->view('templates/header', $data);
                 $this->load->view('users/reset/newpassword', $data);
                 $this->load->view('templates/footer', $data);
