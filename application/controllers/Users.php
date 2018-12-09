@@ -108,16 +108,17 @@
 
         public function reset($token = null){
             $data['title'] = 'Passwort vergessen';
-            if (empty($token)) {
+            if(empty($token)) {
                 $this->load->view('templates/header', $data);
-                $this->load->view('users/form', $data);
+                $this->load->view('users/reset/form', $data);
                 $this->load->view('templates/footer', $data);
             }else {
-                $tokenarray = explode('/', $token);}
+                $tokenarray = explode('/', $token);
                 $data['token1'] = $tokenarray[0];
                 $this->load->view('templates/header', $data);
-                $this->load->view('users/newpassword', $data);
+                $this->load->view('users/reset/newpassword', $data);
                 $this->load->view('templates/footer', $data);
+            }
         }
 
         public function activate($token = null){
