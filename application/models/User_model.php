@@ -63,7 +63,7 @@ public function get_userid($email)
         $result = $this->db->get('users');
         $userid =  $result->row(0)->id;
 
-        $link = base_url() .'/users/reset/'.$userid.$token;
+        $link = base_url() .'users/reset/'.$userid.".".$token;
 
         $this->load->library('email');
 
