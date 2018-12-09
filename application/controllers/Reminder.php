@@ -1,6 +1,6 @@
 <?php
 
-class Reminder
+class Reminder extends CI_Controller
 {
 
     public function send(){
