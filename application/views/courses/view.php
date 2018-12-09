@@ -3,7 +3,6 @@
 
 <h2><?php echo $course['title']; ?></h2>
 
-        <h3>Alternate</h3>
         <ul class="alt">
             <li>Anbieter: <?php echo $course['name']; ?></li>
             <li>Ort: <?php echo $course['location']; ?></li>
