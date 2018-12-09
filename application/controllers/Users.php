@@ -106,6 +106,7 @@
             }
         }
 
+        //öffnet das Zurücksetzformular
         public function reset($token = null)
         {
             $data['title'] = 'Passwort vergessen';
@@ -115,6 +116,8 @@
                 $this->load->view('users/reset/form', $data);
                 $this->load->view('templates/footer', $data);
             }else{
+                $token = $this->uri->segment(3);
+                $data['token1'] = $token;
                 $this->load->view('templates/header', $data);
                 $this->load->view('users/reset/newpassword', $data);
                 $this->load->view('templates/footer', $data);
@@ -128,6 +131,8 @@
             $this->form_validation->set_rules('password2', 'Passwort bestätigen', 'required|matches[password]');
 
             if ($this->form_validation->run() === FALSE) {
+                $token = $this->uri->segment(3);
+                $data['token1'] = $token;
                 $this->load->view('templates/header', $data);
                 $this->load->view('users/reset/newpassword', $data);
                 $this->load->view('templates/footer', $data);
