@@ -9,6 +9,7 @@
             $this->load->helper('form');
             $this->load->library('form_validation');
             $this->load->model('user_model');
+            $this->load->helper('date');
         }
 
 
@@ -110,6 +111,7 @@
             $data['title'] = 'Passwort vergessen';
             $data['token1'] = $token;
             if(empty($token)) {
+                $data['time'] = time();
                 $this->load->view('templates/header', $data);
                 $this->load->view('users/reset/form', $data);
                 $this->load->view('templates/footer', $data);
@@ -124,8 +126,6 @@
                     $password = $this->input->post('password');
                     $enc_password = password_hash($password, PASSWORD_ARGON2I);
                     $this->load->user_model->update($token,$enc_password);
-
-                    $this->session->set_flashdata('user_registered', 'You are now registered.');
 
                     redirect('users/login');
 

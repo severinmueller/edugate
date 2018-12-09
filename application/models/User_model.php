@@ -32,12 +32,22 @@ public function get_userid($email)
 }
 
     public function update($token, $enc_password){
+        $tokenexploded = explode(".", $token);
+        $userpart = $tokenexploded[0];
+        $tokenpart = $tokenexploded[1];
+        $this->db->where('user_id', $userpart);
+        $this->db->where('purpose', reset);
+        $this->db->where('token', $tokenpart);
+        $this->db->where('expired', FALSE);
+        $result = $this->db->get('user_tokens');
 
-        $data = array(
-            'password' => $enc_password,
-        );
-        //return $this->db->update('users', $data);
-        return true;
+        if(!(empty($result))){
+            $data = array(
+                'password' => $enc_password,
+            );
+            $this->db->where('id',$userpart);
+            return $this->db->update('users', $data);
+        }
     }
 
 
