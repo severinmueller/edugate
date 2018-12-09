@@ -126,7 +126,7 @@
 
                     $password = $this->input->post('password');
                     $enc_password = password_hash($password, PASSWORD_ARGON2I);
-                    $this->load->user_model->update($token,$enc_password);
+                    $this->user_model->update($token,$enc_password);
 
                     redirect('users/login');
 
