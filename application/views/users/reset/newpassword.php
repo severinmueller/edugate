@@ -1,7 +1,3 @@
-<?php
-echo "newpassword";
-echo $token1;
-?>
         <?php echo form_open('users/reset2/'.$token1); ?>
    <div class="form-group">
     <label>Neues Passwort</label>

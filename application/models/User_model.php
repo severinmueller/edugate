@@ -58,6 +58,30 @@ public function get_userid($email)
         }
 
     public function send_token($email){
+        $token = bin2hex(random_bytes(40));
+        $this->db->where('email',$email);
+        $result = $this->db->get('users');
+        $userid =  $result->row(0)->id;
+
+        $link = base_url() .'/users/reset/'.$userid.$token;
+
+        $this->load->library('email');
+
+        $this->email->initialize(array(
+            'protocol' => 'smtp',
+            'smtp_host' => 'smtp.sendgrid.net',
+            'smtp_user' => getenv("SENDGRID_USERNAME"),
+            'smtp_pass' => getenv("SENDGRID_PASSWORD"),
+            'smtp_port' => 587,
+            'crlf' => "\r\n",
+            'newline' => "\r\n"
+        ));
+
+        $this->email->from('edugate@sendgrid.me');
+        $this->email->to('severin.mueller@students.fhnw.ch');
+        $this->email->subject('Reset link');
+        $this->email->message('Dein Link zum Passwort-Reset: '.$link);
+        $this->email->send();
 
     }
 
