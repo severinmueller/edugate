@@ -74,10 +74,17 @@ class Course_model extends CI_Model
             'newline' => "\r\n"
         ));
 
+        $user_id =  $this->session->userdata('user_id');
+        $this->db->where('id',$user_id);
+        $result = $this->db->get('users');
+        $email =  $result->row(0)->email;
+        $coursetitle =  $this->input->post('title');
+        $invoicenumber = rand(0,999999999);
+
         $this->email->from('edugate@sendgrid.me');
-        $this->email->to('severin.mueller@students.fhnw.ch');
-        $this->email->subject('Reset link');
-        $this->email->message('Dein Link zum Passwort-Reset: '.$link);
+        $this->email->to($email);
+        $this->email->subject('Rechnung - Kursanzeige für '.$coursetitle);
+        $this->email->message('Guten Tag, \n Sie haben eine Kursanzeige gekauft für den Kurs '.$coursetitle.' gekauft. \n Kosten: 50 CHF. \n Bitte begleichen Sie die Rechnung unter Angabe der Referenz '.$invoicenumber.' auf das Konto XXXXXXXX. \n \n Freundliche Grüsse \n edugate');
         $this->email->send();
 
 
