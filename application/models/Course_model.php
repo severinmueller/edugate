@@ -70,7 +70,7 @@ class Course_model extends CI_Model
         $this->email->from('edugate@sendgrid.me');
         $this->email->to($email);
         $this->email->subject('Rechnung - Kursanzeige für '.$coursetitle);
-        $this->email->message("Guten Tag, \n Sie haben eine Kursanzeige gekauft für den Kurs ".$coursetitle." gekauft. \n Kosten: 50 CHF. \n Frist: 30 Tage \n Bitte begleichen Sie die Rechnung unter Angabe der Referenz ".$invoicenumber." auf das Konto XXXXXXXXX. \n \n Freundliche Grüsse \n edugate");
+        $this->email->message("Guten Tag, \n Sie haben eine Kursanzeige  für den Kurs ".$coursetitle." gekauft. \n Kosten: 50 CHF. \n Frist: 30 Tage \n Bitte begleichen Sie die Rechnung unter Angabe der Referenz ".$invoicenumber." auf das Konto XXXXXXXXX. \n \n Freundliche Grüsse \n edugate");
         $this->email->send();
 
         $slug = url_title($this->input->post('title'));
