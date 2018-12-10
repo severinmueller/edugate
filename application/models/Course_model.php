@@ -31,7 +31,7 @@ class Course_model extends CI_Model
 
     public function get_courses_by_id($id)
     {
-        $query = $this->db->get_where('courses', array('id' => $id));
+        $query = $this->db->get_where('courses', array('courseid' => $id));
         return $query->row_array();
 
     }
