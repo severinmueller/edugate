@@ -67,6 +67,8 @@ class Course_model extends CI_Model
         $data = array(
             'title' => $this->input->post('title'),
             'slug' => $slug,
+            'location' => $this->input->post('location'),
+            'start_date' => $this->input->post('start_date'),
             'body' => $this->input->post('body'),
             'category_id' => $this->input->post('category')
         );

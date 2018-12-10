@@ -127,6 +127,11 @@ $this->email->send();
                 show_404();
             }
 
+            $this->form_validation->set_rules('title', 'Title', 'required|is_unique[courses.title]');
+            $this->form_validation->set_rules('body', 'Beschreibung', 'required');
+            $this->form_validation->set_rules('location', 'Ort', 'required');
+            $this->form_validation->set_rules('start_date', 'Startdatum');
+
             $this->load->view('templates/header', $data);
             $this->load->view('courses/edit', $data);
             $this->load->view('templates/footer', $data);

@@ -8,8 +8,16 @@
     <input type="text" class="form-control" name="title" placeholder="Add title..." value="<?php echo $course['title']?>">
 </div>
 <div class="form-group">
+    <label>Ort</label>
+    <input type="text" class="form-control" name="location" placeholder="Kanton">
+</div>
+<div class="form-group">
+    <label>Startdatum (optional)</label>
+    <input type="date" class="form-control" name="start_date">
+</div>
+<div class="form-group">
     <label>Body</label>
-    <textarea name="body" id="editor"><?php echo html_purify($course['body'])?></textarea>
+    <textarea name="body" id="editor"><?php echo $course['body']?></textarea>
     <script>
 
         CKEDITOR.replace( 'editor', {
