@@ -62,8 +62,6 @@ public function get_userid($email)
         $this->db->where('email',$email);
         $result = $this->db->get('users');
         $userid =  $result->row(0)->id;
-        $email = $result->row(0)->email;
-
         $link = base_url() .'users/reset/'.$userid.".".$token;
 
         $this->load->library('email');
