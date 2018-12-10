@@ -13,7 +13,7 @@
 </div>
 <br>
 <div class="form-group">
-    <label>Body</label>
+    <label>Beschreibung</label>
     <textarea name="body" id="editor"><?php echo html_purify($course['body'])?></textarea>
     <script>
 
@@ -26,7 +26,7 @@
 <button type="submit" class="button">Bestätigen</button>
 <br>
 <div class="form-group">
-    <label>Category</label>
+    <label>Kategorie</label>
     <select name="category" class="form-control">
         <?php foreach($categories as $category): ?>
             <option value="<?php echo $category['id']; ?>"><?php echo $category['name']; ?></option>
