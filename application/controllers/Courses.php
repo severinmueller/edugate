@@ -147,7 +147,7 @@ $this->email->send();
             $this->form_validation->set_rules('location', 'Ort', 'required');
             $this->form_validation->set_rules('start_date', 'Startdatum');
 
-            if($this->run() === FALSE){
+            if($this->form_validation->run() === FALSE){
                 $data['course'] = $this->course_model->get_courses($id);
                 $data['title'] = 'Kurs bearbeiten';
 
