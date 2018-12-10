@@ -9,11 +9,11 @@
 </div>
 <div class="form-group">
     <label>Ort</label>
-    <input type="text" class="form-control" name="location" placeholder="Kanton">
+    <input type="text" class="form-control" name="location" placeholder="<?php echo html_purify($course['location'])?>">
 </div>
 <div class="form-group">
     <label>Startdatum (optional)</label>
-    <input type="date" class="form-control" name="start_date">
+    <input type="date" class="form-control" name="start_date" value="<?php echo html_purify($course['start_date'])?>">
 </div>
 <div class="form-group">
     <label>Body</label>
