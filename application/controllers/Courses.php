@@ -90,7 +90,7 @@ $this->email->send();
             }else{
                 $this->course_model->create_course();
 
-                $this->session->set_flashdata('course_created', 'Your course has been created.');
+                $this->session->set_flashdata('course_created', 'Ihr Kurs wurde erstellt.');
 
                 redirect('courses/manage');
             }
@@ -118,7 +118,7 @@ $this->email->send();
         if($this->session->userdata('logged_in')) {
 
             $data['course'] = $this->course_model->get_courses($slug);
-            $data['title'] = 'Edit course';
+            $data['title'] = 'Kurs bearbeiten';
 
             $data['categories'] = $this->course_model->get_categories();
 
@@ -142,7 +142,7 @@ $this->email->send();
         if($this->session->userdata('logged_in') && ($this->session->userdata('user_id') == $this->course_model->get_course_userid($id))) {
 
             $this->course_model->update_course($id);
-            $this->session->set_flashdata('course_updated', 'Your course has been updated.');
+            $this->session->set_flashdata('course_updated', 'Ihr Kurs wurde aktualisiert.');
             redirect('courses/manage');
 
         }else{
