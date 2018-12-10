@@ -1,4 +1,4 @@
-<h2><?php $title ?></h2>
+<h2><?php echo $title ?> - <?php echo $course['title'] ?></h2>
 
 <?php echo validation_errors(); ?>
 
