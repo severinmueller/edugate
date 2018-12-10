@@ -17,7 +17,7 @@
 </div>
 <div class="form-group">
     <label>Body</label>
-    <textarea name="body" id="editor"><?php echo $course['body']?></textarea>
+    <textarea name="body" id="editor"><?php echo html_purify($course['body'])?></textarea>
     <script>
 
         CKEDITOR.replace( 'editor', {
