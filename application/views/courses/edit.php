@@ -21,9 +21,7 @@
         });
 
     </script>
-</div>
 
-</div>
 <button type="submit" class="button">Submit</button>
 
 <div class="form-group">
