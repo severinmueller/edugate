@@ -78,7 +78,6 @@ class Course_model extends CI_Model
         $this->db->where('id',$user_id);
         $result = $this->db->get('users');
         $email =  $result->row(0)->email;
-        $coursetitle =  $this->input->post('title');
         $invoicenumber = rand(0,999999999);
 
         $this->email->from('edugate@sendgrid.me');
