@@ -4,11 +4,11 @@
         <section>
             <h2>Follow</h2>
             <ul class="icons">
-                <li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
-                <li><a href="webmaster@edugate.ch" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+                <li><a href="example.com/twitteredugatelink" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="example.com/facebookedugatelink" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="example.com/instagramedugatelink" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="000 111 222 33 44" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
+                <li><a href="mailto:info@edugate.com" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
             </ul>
         </section>
         <ul class="copyright">
