@@ -7,14 +7,17 @@
     <label>Kursname</label>
     <input type="text" class="form-control" name="title" placeholder="Kursname">
 </div>
+ <br>
         <div class="form-group">
             <label>Ort</label>
             <input type="text" class="form-control" name="location" placeholder="Ort">
         </div>
+ <br>
         <div class="form-group">
             <label>Startdatum (optional)</label>
             <input type="date" class="form-control" name="start_date">
         </div>
+ <br>
 <div class="form-group">
     <label>Beschreibung</label>
     <textarea name="body" id="editor"></textarea>
@@ -34,7 +37,7 @@
         <?php endforeach; ?>
     </select>
 </div>
-
+ <br>
 <button type="submit" class="button">Submit</button>
 </form>
 

@@ -7,10 +7,12 @@
     <label>Ort</label>
     <input type="text" class="form-control" name="location" placeholder="Ort" value="<?php echo html_purify($course['location'])?>">
 </div>
+<br>
 <div class="form-group">
     <label>Startdatum (optional)</label>
     <input type="date" class="form-control" name="start_date" value="<?php echo html_purify($course['start_date'])?>">
 </div>
+<br>
 <div class="form-group">
     <label>Body</label>
     <textarea name="body" id="editor"><?php echo html_purify($course['body'])?></textarea>
@@ -23,7 +25,7 @@
     </script>
 
 <button type="submit" class="button">Submit</button>
-
+<br>
 <div class="form-group">
     <label>Category</label>
     <select name="category" class="form-control">
