@@ -12,8 +12,6 @@
             $this->load->helper('date');
         }
 
-
-
         public function register(){
             $data['title'] = 'Registrieren';
 
@@ -34,7 +32,7 @@
             $enc_password = password_hash($password, PASSWORD_ARGON2I);
             $this->user_model->register($enc_password);
 
-            $this->session->set_flashdata('user_registered', 'You are now registered.');
+            $this->session->set_flashdata('user_registered', 'Sie sind jetzt registriert.');
 
             redirect('users/login');
 
@@ -81,14 +79,14 @@
 
 
                     } else {
-                        $this->session->set_flashdata('user_login_failed', 'Login gescheitert. Falsches Passwort oder Name');
+                        $this->session->set_flashdata('user_login_failed', 'Login gescheitert. Falsches Passwort oder E-Mail-Adresse.');
 
                         redirect('users/login');
                     }
 
                 }
             } else {
-                $this->session->set_flashdata('user_login_failed', 'Already logged in.');
+                $this->session->set_flashdata('user_login_failed', 'Sie sind bereits eingeloggt.');
                 redirect('courses/manage');
             }
         }
@@ -99,7 +97,7 @@
             if($this->session->userdata('logged_in')){
             $user_data = array('user_id', 'username', 'logged_in');
             $this->session->unset_userdata($user_data);
-            $this->session->set_flashdata('user_logged_out', 'You are now logged out.');
+            $this->session->set_flashdata('user_logged_out', 'Sie sind nun eingeloggt.');
             redirect('users/login');
         }else{
                 redirect('');
