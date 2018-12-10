@@ -142,7 +142,6 @@ $this->email->send();
 
         if($this->session->userdata('logged_in') && ($this->session->userdata('user_id') == $this->course_model->get_course_userid($id))) {
 
-            $this->form_validation->set_rules('title', 'Title', 'required|is_unique[courses.title]');
             $this->form_validation->set_rules('body', 'Beschreibung', 'required');
             $this->form_validation->set_rules('location', 'Ort', 'required');
             $this->form_validation->set_rules('start_date', 'Startdatum');
