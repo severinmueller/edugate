@@ -4,7 +4,7 @@
 
 <div class="form-group">
     <label>E-Mail-Adresse</label>
-    <input type="email" class="form-control" name="email" placeholder="Email">
+    <input type="email" class="form-control" name="email" placeholder="E-Mail-Adresse">
 </div>
         <div class="form-group">
             <label>Name der Organisation</label>
@@ -12,12 +12,13 @@
         </div>
 <div class="form-group">
     <label>Password</label>
-    <input type="password" class="form-control" name="password" placeholder="Password">
+    <input type="password" class="form-control" name="password" placeholder="Passwort">
 </div>
 <div class="form-group">
     <label>Confirm password</label>
-    <input type="password" class="form-control" name="password2" placeholder="Confirm password">
+    <input type="password" class="form-control" name="password2" placeholder="Passwort bestätigen">
 </div>
+    <br>
 <button type="submit" class="button">Registrieren</button>
 
 <?php echo form_close(); ?>
