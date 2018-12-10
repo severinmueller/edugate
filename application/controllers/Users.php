@@ -97,7 +97,7 @@
             if($this->session->userdata('logged_in')){
             $user_data = array('user_id', 'username', 'logged_in');
             $this->session->unset_userdata($user_data);
-            $this->session->set_flashdata('user_logged_out', 'Sie sind nun eingeloggt.');
+            $this->session->set_flashdata('user_logged_out', 'Sie sind nun ausgeloggt.');
             redirect('users/login');
         }else{
                 redirect('');
