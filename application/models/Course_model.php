@@ -69,10 +69,7 @@ class Course_model extends CI_Model
     }
 
     public function update_course($id){
-        $slug = url_title($this->input->post('title'));
-
         $data = array(
-            'slug' => $slug,
             'location' => $this->input->post('location'),
             'start_date' => $this->input->post('start_date'),
             'body' => $this->input->post('body'),
