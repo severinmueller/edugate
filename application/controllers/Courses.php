@@ -127,10 +127,6 @@ $this->email->send();
                 show_404();
             }
 
-            $this->form_validation->set_rules('title', 'Title', 'required|is_unique[courses.title]');
-            $this->form_validation->set_rules('body', 'Beschreibung', 'required');
-            $this->form_validation->set_rules('location', 'Ort', 'required');
-            $this->form_validation->set_rules('start_date', 'Startdatum');
 
             $this->load->view('templates/header', $data);
             $this->load->view('courses/edit', $data);
@@ -146,9 +142,26 @@ $this->email->send();
 
         if($this->session->userdata('logged_in') && ($this->session->userdata('user_id') == $this->course_model->get_course_userid($id))) {
 
-            $this->course_model->update_course($id);
-            $this->session->set_flashdata('course_updated', 'Ihr Kurs wurde aktualisiert.');
-            redirect('courses/manage');
+            $this->form_validation->set_rules('title', 'Title', 'required|is_unique[courses.title]');
+            $this->form_validation->set_rules('body', 'Beschreibung', 'required');
+            $this->form_validation->set_rules('location', 'Ort', 'required');
+            $this->form_validation->set_rules('start_date', 'Startdatum');
+
+            if($this->run() === FALSE){
+                $data['course'] = $this->course_model->get_courses($id);
+                $data['title'] = 'Kurs bearbeiten';
+
+                $data['categories'] = $this->course_model->get_categories();
+
+                $this->load->view('templates/header', $data);
+                $this->load->view('courses/edit', $data);
+                $this->load->view('templates/footer', $data);
+            }else{
+                $this->course_model->update_course($id);
+                $this->session->set_flashdata('course_updated', 'Ihr Kurs wurde aktualisiert.');
+                redirect('courses/manage');
+            }
+
 
         }else{
             redirect('users/login');

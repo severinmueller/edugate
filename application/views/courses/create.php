@@ -9,7 +9,7 @@
 </div>
         <div class="form-group">
             <label>Ort</label>
-            <input type="text" class="form-control" name="location" placeholder="Kanton">
+            <input type="text" class="form-control" name="location" placeholder="Ort">
         </div>
         <div class="form-group">
             <label>Startdatum (optional)</label>

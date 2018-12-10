@@ -4,12 +4,12 @@
 
 <?php echo form_open('courses/update/'.$course['courseid']); ?>
 <div class="form-group">
-    <label>Title</label>
-    <input type="text" class="form-control" name="title" placeholder="Add title..." value="<?php echo $course['title']?>">
+    <label>Kursname</label>
+    <input type="text" class="form-control" name="title" placeholder="Kurstitel" value="<?php echo $course['title']?>">
 </div>
 <div class="form-group">
     <label>Ort</label>
-    <input type="text" class="form-control" name="location" placeholder="<?php echo html_purify($course['location'])?>">
+    <input type="text" class="form-control" name="location" placeholder="Ort" value="<?php echo html_purify($course['location'])?>">
 </div>
 <div class="form-group">
     <label>Startdatum (optional)</label>
