@@ -1,5 +1,6 @@
     <?php echo validation_errors(); ?>
     <?php echo form_open('users/register'); ?>
+    <h1 class="text-center"><?php echo $title; ?></h1>
 
 <div class="form-group">
     <label>E-Mail-Adresse</label>
@@ -17,7 +18,7 @@
     <label>Confirm password</label>
     <input type="password" class="form-control" name="password2" placeholder="Confirm password">
 </div>
-<button type="submit" class="button">Submit</button>
+<button type="submit" class="button">Registrieren</button>
 
 <?php echo form_close(); ?>
     </div>
