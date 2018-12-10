@@ -7,7 +7,6 @@
     <label>Ort</label>
     <input type="text" class="form-control" name="location" placeholder="Ort" value="<?php echo html_purify($course['location'])?>">
 </div>
-<br>
 <div class="form-group">
     <label>Startdatum (optional)</label>
     <input type="date" class="form-control" name="start_date" value="<?php echo html_purify($course['start_date'])?>">
