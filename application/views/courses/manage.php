@@ -15,11 +15,11 @@
                 <tbody>
                 <?php foreach($courses as $course) : ?>
                     <tr>
-                        <td><a href="<?php echo site_url('/courses/'.html_purify($course['slug'])); ?>"><?php echo html_purify($course['title']); ?></a></td>
+                        <td><a href="<?php echo site_url('/courses/'.$course['slug']); ?>"><?php echo html_purify($course['title']); ?></a></td>
                         <td><?php echo html_purify($course['location']); ?></td>
                         <td><?php echo html_purify($course['name']); ?></td>
                         <td><?php echo html_purify($course['start_date']); ?></td>
-                        <td><a class="button" href="edit/<?php echo html_purify($course['slug']);?>">Bearbeiten</a></td>
+                        <td><a class="button" href="edit/<?php echo $course['slug'];?>">Bearbeiten</a></td>
                         <td><a class="button" href="delete/<?php echo $course['courseid'];?>">Löschen</a></td>
                     </tr>
                 <?php endforeach; ?>
