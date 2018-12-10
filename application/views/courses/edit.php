@@ -23,7 +23,7 @@
 
     </script>
 
-<button type="submit" class="button">Submit</button>
+<button type="submit" class="button">Bestätigen</button>
 <br>
 <div class="form-group">
     <label>Category</label>

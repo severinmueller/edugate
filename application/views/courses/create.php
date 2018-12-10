@@ -28,7 +28,7 @@
     </script>
 </div>
 <div class="form-group">
-    <label>Category</label>
+    <label>Kategorie</label>
     <select name="category" class="form-control">
         <?php foreach($categories as $category): ?>
             <option value="<?php echo $category['id']; ?>"><?php echo $category['name']; ?></option>
@@ -36,8 +36,10 @@
     </select>
 </div>
  <br>
-<button type="submit" class="button">Submit</button>
-</form>
+<button type="submit" class="button">Kursanzeige kaufen (50 CHF)</button>
+ <p>Mit dem Klick auf den Button "Kursanzeige kaufen" bestätigen sie den Kauf einer Anzeige für den Preis von 50 Franken.</p>
+
+ </form>
 
     </div>
 </div>
