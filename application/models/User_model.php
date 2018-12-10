@@ -79,7 +79,7 @@ public function get_userid($email)
         $this->email->from('edugate@sendgrid.me');
         $this->email->to($email);
         $this->email->subject('Reset link');
-        $this->email->message('Dein Link zum Passwort-Reset: '.$link);
+        $this->email->message('Ihr Link zum Passwort-Reset: '.$link);
         $this->email->send();
 
         $data = array(
